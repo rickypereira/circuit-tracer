@@ -28,12 +28,43 @@ You will also need to be authenticated with Hugging Face. You can do this by run
 """
 
 import os
+import logging
 import subprocess
 import sys
 from collections import namedtuple
 from functools import partial
+from pathlib import Path
+from typing import List, Dict, Tuple, Optional, Any
 
 import torch
+DEFAULT_VM_INSTANCE_NAME = "circuit-tracking-us-west-1"
+
+# --- Helper Functions ---
+def setup_paths(base_dir: Path) -> Dict[str, Path]:
+    """Sets up project paths based on a base directory."""
+    project_path = base_dir
+    workspace_path = project_path / "circuit-tracer"
+    output_dir = project_path / "output"
+
+    if str(workspace_path) not in sys.path:
+        logging.info(f"Adding {workspace_path} to sys.path")
+        sys.path.append(str(workspace_path))
+
+    logging.info(f"Setting MODEL_PATH environment variable to {project_path}")
+    os.environ['MODEL_PATH'] = str(project_path)
+
+    logging.info(f"Ensuring output directory exists: {output_dir}")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    return {
+        "project": project_path,
+        "workspace": workspace_path,
+        "output": output_dir,
+    }
+
+# Setup paths and environment
+paths = setup_paths(Path(f"/home/ubuntu/{DEFAULT_VM_INSTANCE_NAME}").resolve())
+
 from circuit_tracer.replacement_model import ReplacementModel
 
 
@@ -306,7 +337,6 @@ def main():
         "google/gemma-2-2b",
         'gemma',
         dtype=torch.bfloat16,
-        device_map="auto" # Use "auto" to distribute across available hardware
     )
     print("Model loaded successfully.")
 
