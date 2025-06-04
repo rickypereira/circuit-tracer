@@ -29,7 +29,7 @@ You will also need to be authenticated with Hugging Face. You can do this by run
 
 import os
 import logging
-import subprocess
+import argparse
 import sys
 from collections import namedtuple
 from functools import partial
@@ -325,6 +325,35 @@ def run_generation_experiment(model, print_gen_func):
             post_intervention_generation = [model.generate(s_french_season, do_sample=False, use_past_kv_cache=False, verbose=False, max_new_tokens=15)]
             
     print_gen_func(s_french_season, pre_intervention_generation, post_intervention_generation)
+
+
+# --- Argument Parsing and Main Execution ---
+
+def map_version_arg(version_str: str) -> Tuple[str, str]:
+    """Maps string argument to version enum."""
+    version_map = {
+        "gemma-2-2b": ("google/gemma-2-2b", "gemma"),
+        "gemma-2-2b-it": ( "google/gemma-2-2b-it", "gemma"),
+        "gemma-2-27b" : ("google/gemma-2-27b", "gemma"),
+        "gemma-2-27b" : ("google/gemma-2-27b-it", "gemma"),
+        "shieldgemma-9b": ("google/shieldgemma-9b", "gemma"),
+        "gpt-2": ("openai-community/gpt2", "gpt"),
+    }
+    if version_str not in version_map:
+        raise ValueError(f"Unknown version string: {version_str}. Available: {list(version_map.keys())}")
+    return version_map[version_str]
+
+def parse_arguments() -> argparse.Namespace:
+    """Parses command-line arguments."""
+    parser = argparse.ArgumentParser(description="Run LLM fine-tuning and evaluation experiments.")
+    # Model Arguments
+    parser.add_argument(
+        "--version", type=str, default='gemma-2-2b',
+        choices=["gemma-2-2b", "Llama3_2_3B", "Llama3_1_70B", "Gemma7B", "Gemma27B", "Gemma9B"],
+        help="Model version identifier (e.g., gemma-2-2b)."
+    )
+    args = parser.parse_args()
+    return args
 
 
 def main():
