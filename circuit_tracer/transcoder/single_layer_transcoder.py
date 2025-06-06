@@ -1,7 +1,7 @@
 import os
 from collections import namedtuple
 from importlib import resources
-from typing import Callable, Optional
+from typing import Callable, Optional, List
 
 import numpy as np
 import torch
@@ -134,6 +134,29 @@ def load_gemma_scope_transcoder(
     transcoder.load_state_dict(param_dict, assign=True)
     return transcoder
 
+def load_local_relu_transcoder(
+        path: str,
+        layer: int,
+        device: torch.device = torch.device("cuda"),
+          dtype: Optional[torch.dtype] = torch.float32,
+    ):
+    state_dict = torch.load(path, weights_only=False)
+    param_dict = state_dict['state_dict']
+    W_enc = param_dict["W_enc"]
+    d_sae, d_model = W_enc.shape
+    param_dict["W_enc"] = param_dict["W_enc"].T.contiguous()
+    param_dict["W_dec"] = param_dict["W_dec"].T.contiguous()
+    activation_function = F.relu
+    with torch.device("meta"):
+        transcoder = SingleLayerTranscoder(
+            d_model,
+            d_sae,
+            activation_function,
+            layer,
+            skip_connection=param_dict["W_skip"] is not None,
+        )
+    transcoder.load_state_dict(param_dict, assign=True)
+    return transcoder.to(dtype)
 
 def load_relu_transcoder(
     path: str,
@@ -166,6 +189,21 @@ TranscoderSettings = namedtuple(
     "TranscoderSettings", ["transcoders", "feature_input_hook", "feature_output_hook", "scan"]
 )
 
+
+def load_local_transcoder_set(transcoder_config_files: List[str],
+                              layer_scan_format: str,
+                              device: Optional[torch.device] = torch.device("cuda"),
+                              dtype: Optional[torch.dtype] = torch.float32,
+                              ) -> TranscoderSettings:
+    feature_input_hook = 'ln2.hook_normalized'
+    feature_output_hook = 'hook_mlp_out'
+    transcoders = {}
+    for layer, transcoder_config_file in enumerate(transcoder_config_files):
+        transcoder = load_relu_transcoder(transcoder_config_file, layer, device=device, dtype=dtype)
+        transcoders[layer] = transcoder
+        scan = f"{scan}/{layer_scan_format.format(layer)}"
+    return TranscoderSettings(transcoders, feature_input_hook, feature_output_hook, scan) 
+    
 
 def load_transcoder_set(
     transcoder_config_file: str,

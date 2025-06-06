@@ -37,7 +37,7 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any
 
 import torch
-DEFAULT_VM_INSTANCE_NAME = "circuit-tracking-us-west-1"
+DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 
 # --- Helper Functions ---
 def setup_paths(base_dir: Path) -> Dict[str, Path]:
@@ -63,9 +63,12 @@ def setup_paths(base_dir: Path) -> Dict[str, Path]:
     }
 
 # Setup paths and environment
-paths = setup_paths(Path(f"/home/ubuntu/{DEFAULT_VM_INSTANCE_NAME}").resolve())
+paths = setup_paths(DEFAULT_PROJECT_PATH)
 
 from circuit_tracer.replacement_model import ReplacementModel
+from sae_training.config import LanguageModelSAERunnerConfig
+from sae_training.utils import LMSparseAutoencoderSessionloader
+from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
 
 # --- Utility Functions (re-implemented from the notebook's utils) ---
@@ -327,6 +330,97 @@ def run_generation_experiment(model, print_gen_func):
     print_gen_func(s_french_season, pre_intervention_generation, post_intervention_generation)
 
 
+# --- Training ---
+def create_training_configs(
+        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=768, d_out=728,
+        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
+        dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
+        context_size = 128, lr_warm_up_steps=5000, n_batches_in_buffer = 128,
+        total_training_tokens = 1_000_000 * 60, store_batch_size = 32, 
+        use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
+        resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
+        seed=42) -> Dict[int, LanguageModelSAERunnerConfig]:
+    layer_to_config = {}
+    for layer in range(n_layers):
+        cfg = LanguageModelSAERunnerConfig(
+            hook_point = f"blocks.{layer}.ln2.hook_normalized",
+            hook_point_layer = layer,
+            d_in = d_in,
+            dataset_path = dataset_path,
+            is_dataset_tokenized=False,
+            model_name=model_name,
+            is_transcoder = True,
+            out_hook_point = f"blocks.{layer}.hook_mlp_out",
+            out_hook_point_layer = layer,
+            d_out = d_out,
+            # SAE Parameters
+            expansion_factor = expansion_factor,
+            b_dec_init_method = b_dec_init_method,
+            
+            # Training Parameters
+            lr = lr,
+            l1_coefficient = l1_coefficient,
+            lr_scheduler_name="constantwithwarmup",
+            train_batch_size = train_batch_size,
+            context_size = context_size,
+            lr_warm_up_steps=lr_warm_up_steps,
+            
+            # Activation Store Parameters
+            n_batches_in_buffer = n_batches_in_buffer,
+            total_training_tokens = total_training_tokens,
+            store_batch_size = store_batch_size,
+            
+            # Dead Neurons and Sparsity
+            use_ghost_grads=use_ghost_grads,
+            feature_sampling_method = feature_sampling_method,
+            feature_sampling_window = feature_sampling_window,
+            resample_batches=resample_batches,
+            dead_feature_window=dead_feature_window,
+            dead_feature_threshold = dead_feature_threshold,
+
+            # WANDB
+            log_to_wandb = False,
+            
+            # Misc
+            use_tqdm = True,
+            device = "cuda",
+            seed = seed,
+            n_checkpoints = n_checkpoints,
+            checkpoint_path = checkpoint_path,
+            dtype = torch.float32,
+        )
+        layer_to_config[layer] = cfg
+
+
+def train(version: str) -> List[str]:
+    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / version
+    n_layers = version_to_n_layers(version)
+    layer_to_configs = create_training_configs(model_name=version, n_layers=n_layers, checkpoint_path=checkpoint_path)
+    paths = []
+    for _, cfg in layer_to_configs.items:
+        loader = LMSparseAutoencoderSessionloader(cfg)
+        model, sparse_autoencoder, activations_loader = loader.load_session()
+        # train SAE
+        sparse_autoencoder = train_sae_on_language_model(
+            model, sparse_autoencoder, activations_loader,
+            n_checkpoints=cfg.n_checkpoints,
+            batch_size = cfg.train_batch_size,
+            feature_sampling_method = cfg.feature_sampling_method,
+            feature_sampling_window = cfg.feature_sampling_window,
+            feature_reinit_scale = cfg.feature_reinit_scale,
+            dead_feature_threshold = cfg.dead_feature_threshold,
+            dead_feature_window=cfg.dead_feature_window,
+            use_wandb = cfg.log_to_wandb,
+            wandb_log_frequency = cfg.wandb_log_frequency
+        )
+
+        # save sae to checkpoints folder
+        path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.get_name()}.pt"
+        sparse_autoencoder.save_model(path)
+        paths.append(path)
+    return paths
+        
+
 # --- Argument Parsing and Main Execution ---
 
 def map_version_arg(version_str: str) -> Tuple[str, str]:
@@ -343,15 +437,24 @@ def map_version_arg(version_str: str) -> Tuple[str, str]:
         raise ValueError(f"Unknown version string: {version_str}. Available: {list(version_map.keys())}")
     return version_map[version_str]
 
+def version_to_n_layers(version_str: str) -> int:
+    version_map = {
+        'gemma-2-27b' : 45
+    }
+    if version_str not in version_map:
+        raise ValueError(f"Unknown version string: {version_str}. Available: {list(version_map.keys())}")
+    return version_map[version_str]
+
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
     parser = argparse.ArgumentParser(description="Run LLM fine-tuning and evaluation experiments.")
     # Model Arguments
     parser.add_argument(
         "--version", type=str, default='gemma-2-2b',
-        choices=["gemma-2-2b", "Llama3_2_3B", "Llama3_1_70B", "Gemma7B", "Gemma27B", "Gemma9B"],
+        choices=['gemma-2-2b', "gemma-2-27b"],
         help="Model version identifier (e.g., gemma-2-2b)."
     )
+    parser.add_argument("--train", action='store_true', help="Run model training")
     args = parser.parse_args()
     return args
 
@@ -360,11 +463,21 @@ def main():
     """Main function to run the script."""
     setup_environment()
 
-    print("Loading model 'google/gemma-2-2b'...")
+    args = parse_arguments()
+
+    transcoder_set = None
+    if args.train:
+        print(f"Training model {args.version}")
+        transcoder_set = train(version=args.version)
+    
+    if args.version == 'gemma-2-2b':
+        transcoder_set = 'gemma'
+
+    print(f"Loading model {args.version}")
     # Note: This requires significant memory.
     model = ReplacementModel.from_pretrained(
-        "google/gemma-2-2b",
-        'gemma',
+        model_name=map_version_arg(version=args.version),
+        transcoder_set=transcoder_set,
         dtype=torch.bfloat16,
     )
     print("Model loaded successfully.")

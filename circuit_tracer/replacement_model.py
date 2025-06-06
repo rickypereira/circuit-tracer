@@ -8,7 +8,7 @@ from torch import nn
 from transformer_lens import HookedTransformer, HookedTransformerConfig
 from transformer_lens.hook_points import HookPoint
 
-from circuit_tracer.transcoder import SingleLayerTranscoder, load_transcoder_set
+from circuit_tracer.transcoder import SingleLayerTranscoder, load_transcoder_set, load_local_transcoder_set
 
 
 class ReplacementMLP(nn.Module):
@@ -125,7 +125,7 @@ class ReplacementModel(HookedTransformer):
     def from_pretrained(
         cls,
         model_name: str,
-        transcoder_set: str,
+        transcoder_set: List[str],
         device: Optional[torch.device] = torch.device("cuda"),
         dtype: Optional[torch.dtype] = torch.float32,
         **kwargs,
@@ -143,9 +143,16 @@ class ReplacementModel(HookedTransformer):
         Returns:
             ReplacementModel: The loaded ReplacementModel
         """
-        transcoders, feature_input_hook, feature_output_hook, scan = load_transcoder_set(
-            transcoder_set, device=device, dtype=dtype
-        )
+        if len(transcoder_set) == 1:
+            transcoders, feature_input_hook, feature_output_hook, scan = load_transcoder_set(
+                transcoder_set[0], device=device, dtype=dtype
+            )
+        else:
+            layer_scan_format = model_name + "layer_{0}"
+            transcoders, feature_input_hook, feature_output_hook, scan = load_local_transcoder_set(
+                transcoder_set, layer_scan_format, device=device, dtype=dtype
+            )
+
 
         return cls.from_pretrained_and_transcoders(
             model_name,
