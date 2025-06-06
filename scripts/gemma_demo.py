@@ -398,7 +398,7 @@ def train(version: str) -> List[str]:
     n_layers = version_to_n_layers(version)
     layer_to_configs = create_training_configs(model_name=version, n_layers=n_layers, checkpoint_path=checkpoint_path)
     paths = []
-    for _, cfg in layer_to_configs.items:
+    for _, cfg in layer_to_configs.items():
         loader = LMSparseAutoencoderSessionloader(cfg)
         model, sparse_autoencoder, activations_loader = loader.load_session()
         # train SAE
