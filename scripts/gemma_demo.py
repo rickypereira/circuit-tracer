@@ -390,6 +390,7 @@ def create_training_configs(
             dtype = torch.float32,
         )
         layer_to_config[layer] = cfg
+    return layer_to_config
 
 
 def train(version: str) -> List[str]:
