@@ -85,8 +85,8 @@ def create_training_configs(
         model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=4608, d_out=4608,
         expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
         dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
-        context_size = 128, lr_warm_up_steps=5000, n_batches_in_buffer = 128,
-        total_training_tokens = 1_000_000 * 60, store_batch_size = 32, 
+        context_size = 32, lr_warm_up_steps=5000, n_batches_in_buffer = 32,
+        total_training_tokens = 1_000_000 * 60, store_batch_size = 16, 
         use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
         resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
         seed=42, dtype=torch.float32) -> Dict[int, LanguageModelSAERunnerConfig]:
