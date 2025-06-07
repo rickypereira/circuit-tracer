@@ -13,6 +13,7 @@ Transcoder-specific parameters are marked as such in comments.
 
 import logging
 import torch
+import argparse
 import os 
 import sys
 import numpy as np
@@ -21,7 +22,7 @@ from typing import List, Dict, Tuple, Optional, Any
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-DEFAULT_VM_INSTANCE_NAME = "circuit-tracking-us-west-1"
+DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 
 # --- Helper Functions ---
 def setup_paths(base_dir: Path) -> Dict[str, Path]:
@@ -46,105 +47,170 @@ def setup_paths(base_dir: Path) -> Dict[str, Path]:
         "output": output_dir,
     }
 
+def setup_environment():
+    """
+    Handles environment setup. In the original notebook, this installed a git repository.
+    For this script, we assume the user has installed the library via pip as per
+    the instructions in the docstring.
+    """
+    print("Ensuring environment is set up...")
+    try:
+        import circuit_tracer
+        print("'circuit-tracer' library found.")
+    except ImportError:
+        print("Error: 'circuit-tracer' library not found.")
+        print("Please install it by running: pip install git+https://github.com/safety-research/circuit-tracer.git")
+        sys.exit(1)
+
+    try:
+        # Check for huggingface login
+        from huggingface_hub.hf_api import HfApi
+        HfApi().whoami()
+        print("Hugging Face token found.")
+    except Exception:
+        print("Hugging Face token not found.")
+        print("Please log in using: huggingface-cli login")
+        sys.exit(1)
+
 # Setup paths and environment
-paths = setup_paths(Path(f"/home/ubuntu/{DEFAULT_VM_INSTANCE_NAME}").resolve())
+paths = setup_paths(DEFAULT_PROJECT_PATH)
 
 from sae_training.config import LanguageModelSAERunnerConfig
 from sae_training.utils import LMSparseAutoencoderSessionloader
 from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
-lr = 0.0004 # learning rate
-l1_coeff = 0.00014 # l1 sparsity regularization coefficient
 
-cfg = LanguageModelSAERunnerConfig(
-    # Data Generating Function (Model + Training Distibuion)
+# --- Training ---
+def create_training_configs(
+        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=768, d_out=728,
+        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
+        dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
+        context_size = 128, lr_warm_up_steps=5000, n_batches_in_buffer = 128,
+        total_training_tokens = 1_000_000 * 60, store_batch_size = 32, 
+        use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
+        resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
+        seed=42) -> Dict[int, LanguageModelSAERunnerConfig]:
+    layer_to_config = {}
+    for layer in range(n_layers):
+        cfg = LanguageModelSAERunnerConfig(
+            hook_point = f"blocks.{layer}.ln2.hook_normalized",
+            hook_point_layer = layer,
+            d_in = d_in,
+            dataset_path = dataset_path,
+            is_dataset_tokenized=False,
+            model_name=model_name,
+            is_transcoder = True,
+            out_hook_point = f"blocks.{layer}.hook_mlp_out",
+            out_hook_point_layer = layer,
+            d_out = d_out,
+            # SAE Parameters
+            expansion_factor = expansion_factor,
+            b_dec_init_method = b_dec_init_method,
+            
+            # Training Parameters
+            lr = lr,
+            l1_coefficient = l1_coefficient,
+            lr_scheduler_name="constantwithwarmup",
+            train_batch_size = train_batch_size,
+            context_size = context_size,
+            lr_warm_up_steps=lr_warm_up_steps,
+            
+            # Activation Store Parameters
+            n_batches_in_buffer = n_batches_in_buffer,
+            total_training_tokens = total_training_tokens,
+            store_batch_size = store_batch_size,
+            
+            # Dead Neurons and Sparsity
+            use_ghost_grads=use_ghost_grads,
+            feature_sampling_method = feature_sampling_method,
+            feature_sampling_window = feature_sampling_window,
+            resample_batches=resample_batches,
+            dead_feature_window=dead_feature_window,
+            dead_feature_threshold = dead_feature_threshold,
 
-    # "hook_point" is the TransformerLens HookPoint representing
-    #    the input activations to the transcoder that we want to train on.
-    # Here, "ln2.hook_normalized" refers to the activations after the
-    #    pre-MLP LayerNorm -- that is, the inputs to the MLP.
-    # You might alternatively prefer to train on "blocks.8.hook_resid_mid",
-    #    which corresponds to the input to the pre-MLP LayerNorm.
-    hook_point = "blocks.8.ln2.hook_normalized",
-    hook_point_layer = 8,
-    d_in = 768,
-    dataset_path = "Skylion007/openwebtext",
-    is_dataset_tokenized=False,
-    model_name='gpt2-small',
+            # WANDB
+            log_to_wandb = False,
+            
+            # Misc
+            use_tqdm = True,
+            device = "cuda",
+            seed = seed,
+            n_checkpoints = n_checkpoints,
+            checkpoint_path = checkpoint_path,
+            dtype = torch.float32,
+        )
+        layer_to_config[layer] = cfg
+    return layer_to_config
 
-    # Transcoder-specific parameters.
-    is_transcoder = True, # We're training a transcoder here.
-    # "out_hook_point" is the TransformerLens HookPoint representing
-    #    the output activations that the transcoder should reconstruct.
-    # In our use case, we're using transcoders to interpret MLP sublayers.
-    # This means that our transcoder will take in the input to an MLP and
-    #    attempt to spit out the output of the MLP (but in the form of a
-    #    sparse linear combination of feature vectors).
-    # As such, we want to grab the "hook_mlp_out" activations from our
-    #    transformer, which (as the name suggests), represent the
-    #    output activations of the original MLP sublayer.
-    out_hook_point = "blocks.8.hook_mlp_out",
-    out_hook_point_layer = 8,
-    d_out = 768,
-    
-    # SAE Parameters
-    expansion_factor = 32,
-    b_dec_init_method = "mean",
-    
-    # Training Parameters
-    lr = lr,
-    l1_coefficient = l1_coeff,
-    lr_scheduler_name="constantwithwarmup",
-    train_batch_size = 4096,
-    context_size = 128,
-    lr_warm_up_steps=5000,
-    
-    # Activation Store Parameters
-    n_batches_in_buffer = 128,
-    total_training_tokens = 1_000_000 * 60,
-    store_batch_size = 32,
-    
-    # Dead Neurons and Sparsity
-    use_ghost_grads=True,
-    feature_sampling_method = None,
-    feature_sampling_window = 1000,
-    resample_batches=1028,
-    dead_feature_window=5000,
-    dead_feature_threshold = 1e-8,
 
-    # WANDB
-    log_to_wandb = False,
-    
-    # Misc
-    use_tqdm = True,
-    device = "cuda",
-    seed = 42,
-    n_checkpoints = 3,
-    checkpoint_path = "gpt2-small-transcoders", # change as you please
-    dtype = torch.float32,
-)
+def train(model_name: str) -> List[str]:
+    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
+    n_layers = get_n_layers(model_name)
+    layer_to_configs = create_training_configs(
+        model_name=model_name, 
+        n_layers=n_layers, 
+        checkpoint_path=checkpoint_path,
+        lr = 0.0004, l1_coefficient = 0.00014
+        )
+    paths = []
+    for _, cfg in layer_to_configs.items():
+        print(f"About to start training with lr {cfg.lr} and l1 {cfg.l1_coefficient}")
+        print(f"Checkpoint path: {cfg.checkpoint_path}")
+        print(cfg)
+        loader = LMSparseAutoencoderSessionloader(cfg)
+        model, sparse_autoencoder, activations_loader = loader.load_session()
+        # train SAE
+        sparse_autoencoder = train_sae_on_language_model(
+            model, sparse_autoencoder, activations_loader,
+            n_checkpoints=cfg.n_checkpoints,
+            batch_size = cfg.train_batch_size,
+            feature_sampling_method = cfg.feature_sampling_method,
+            feature_sampling_window = cfg.feature_sampling_window,
+            feature_reinit_scale = cfg.feature_reinit_scale,
+            dead_feature_threshold = cfg.dead_feature_threshold,
+            dead_feature_window=cfg.dead_feature_window,
+            use_wandb = cfg.log_to_wandb,
+            wandb_log_frequency = cfg.wandb_log_frequency
+        )
 
-print(f"About to start training with lr {lr} and l1 {l1_coeff}")
-print(f"Checkpoint path: {cfg.checkpoint_path}")
-print(cfg)
+        # save sae to checkpoints folder
+        path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.get_name()}.pt"
+        sparse_autoencoder.save_model(path)
+        paths.append(path)
+    return paths
+        
+# --- Argument Parsing and Main Execution ---
 
-loader = LMSparseAutoencoderSessionloader(cfg)
-model, sparse_autoencoder, activations_loader = loader.load_session()
+def get_n_layers(model_name: str) -> int:
+    supported_models = {
+        'gemma-2-27b' : 45,
+    }
+    if model_name not in supported_models:
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
+    return supported_models[model_name]
 
-# train SAE
-sparse_autoencoder = train_sae_on_language_model(
-    model, sparse_autoencoder, activations_loader,
-    n_checkpoints=cfg.n_checkpoints,
-    batch_size = cfg.train_batch_size,
-    feature_sampling_method = cfg.feature_sampling_method,
-    feature_sampling_window = cfg.feature_sampling_window,
-    feature_reinit_scale = cfg.feature_reinit_scale,
-    dead_feature_threshold = cfg.dead_feature_threshold,
-    dead_feature_window=cfg.dead_feature_window,
-    use_wandb = cfg.log_to_wandb,
-    wandb_log_frequency = cfg.wandb_log_frequency
-)
+def parse_arguments() -> argparse.Namespace:
+    """Parses command-line arguments."""
+    parser = argparse.ArgumentParser(description="Train Transcoders.")
+    # Model Arguments
+    parser.add_argument(
+        "--model_name", type=str, default='gemma-2-2b',
+        choices=['gemma-2-2b', "gemma-2-27b", "gpt2-small"],
+        help="Model Name identifier (e.g., gemma-2-2b)."
+    )
+    args = parser.parse_args()
+    return args
 
-# save sae to checkpoints folder
-path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.get_name()}.pt"
-sparse_autoencoder.save_model(path)
+
+def main():
+    """Main function to run the script."""
+    setup_environment()
+
+    args = parse_arguments()
+    print(f"Training model {args.model_name}")
+    paths = train(model_name=args.model_name)
+    for path in paths:
+        print(f"Saved: {path}")
+
+if __name__ == "__main__":
+    main()

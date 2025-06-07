@@ -393,10 +393,10 @@ def create_training_configs(
     return layer_to_config
 
 
-def train(version: str) -> List[str]:
-    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / version
-    n_layers = version_to_n_layers(version)
-    layer_to_configs = create_training_configs(model_name=version, n_layers=n_layers, checkpoint_path=checkpoint_path)
+def train(model_name: str) -> List[str]:
+    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
+    n_layers = get_n_layers(model_name)
+    layer_to_configs = create_training_configs(model_name=model_name, n_layers=n_layers, checkpoint_path=checkpoint_path)
     paths = []
     for _, cfg in layer_to_configs.items():
         loader = LMSparseAutoencoderSessionloader(cfg)
@@ -424,9 +424,9 @@ def train(version: str) -> List[str]:
 
 # --- Argument Parsing and Main Execution ---
 
-def map_version_arg(version_str: str) -> Tuple[str, str]:
-    """Maps string argument to version enum."""
-    version_map = {
+def get_replacement_model_name(model_name: str) -> Tuple[str, str]:
+    """Maps string argument to replacement model version"""
+    supported_models = {
         "gemma-2-2b": ("google/gemma-2-2b", "gemma"),
         "gemma-2-2b-it": ( "google/gemma-2-2b-it", "gemma"),
         "gemma-2-27b" : ("google/gemma-2-27b", "gemma"),
@@ -434,26 +434,26 @@ def map_version_arg(version_str: str) -> Tuple[str, str]:
         "shieldgemma-9b": ("google/shieldgemma-9b", "gemma"),
         "gpt-2": ("openai-community/gpt2", "gpt"),
     }
-    if version_str not in version_map:
-        raise ValueError(f"Unknown version string: {version_str}. Available: {list(version_map.keys())}")
-    return version_map[version_str]
+    if model_name not in supported_models:
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
+    return supported_models[model_name]
 
-def version_to_n_layers(version_str: str) -> int:
-    version_map = {
+def get_n_layers(model_name: str) -> int:
+    supported_models = {
         'gemma-2-27b' : 45
     }
-    if version_str not in version_map:
-        raise ValueError(f"Unknown version string: {version_str}. Available: {list(version_map.keys())}")
-    return version_map[version_str]
+    if model_name not in supported_models:
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(model_name.keys())}")
+    return supported_models[model_name]
 
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
-    parser = argparse.ArgumentParser(description="Run LLM fine-tuning and evaluation experiments.")
+    parser = argparse.ArgumentParser(description="Train Transcoders and Run Circuit Tracing.")
     # Model Arguments
     parser.add_argument(
-        "--version", type=str, default='gemma-2-2b',
+        "--model_name", type=str, default='gemma-2-2b',
         choices=['gemma-2-2b', "gemma-2-27b"],
-        help="Model version identifier (e.g., gemma-2-2b)."
+        help="Model Name identifier (e.g., gemma-2-2b)."
     )
     parser.add_argument("--train", action='store_true', help="Run model training")
     args = parser.parse_args()
@@ -468,16 +468,16 @@ def main():
 
     transcoder_set = None
     if args.train:
-        print(f"Training model {args.version}")
-        transcoder_set = train(version=args.version)
+        print(f"Training model {args.model_name}")
+        transcoder_set = train(model_name=args.model_name)
     
-    if args.version == 'gemma-2-2b':
+    if args.model_name == 'gemma-2-2b':
         transcoder_set = 'gemma'
 
-    print(f"Loading model {args.version}")
+    print(f"Loading model {args.model_name}")
     # Note: This requires significant memory.
     model = ReplacementModel.from_pretrained(
-        model_name=map_version_arg(version=args.version),
+        model_name=get_replacement_model_name(model_name=args.model_name),
         transcoder_set=transcoder_set,
         dtype=torch.bfloat16,
     )
