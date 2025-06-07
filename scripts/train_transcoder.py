@@ -82,7 +82,7 @@ from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
 # --- Training ---
 def create_training_configs(
-        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=768, d_out=728,
+        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=4608, d_out=4608,
         expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
         dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
         context_size = 128, lr_warm_up_steps=5000, n_batches_in_buffer = 128,
