@@ -183,7 +183,14 @@ def train(model_name: str) -> List[str]:
 
 def get_n_layers(model_name: str) -> int:
     supported_models = {
+        "gemma-2-2b" : 25,
+        "gemma-2-2b-it" : 25,
+        "gemma-2-9b" : 41,
+        "gemma-2-9b-it" : 41,
         'gemma-2-27b' : 45,
+        "gemma-2-27b-it": 45,
+        "shieldgemma-2b": 25,
+        "shieldgemma-9b": 41,
         'gpt2': 11,
     }
     if model_name not in supported_models:
@@ -196,7 +203,7 @@ def parse_arguments() -> argparse.Namespace:
     # Model Arguments
     parser.add_argument(
         "--model_name", type=str, default='gemma-2-2b',
-        choices=['gemma-2-2b', "gemma-2-27b", "gpt2"],
+        choices=['gemma-2-2b', "gemma-2-2b-it", "gemma-2-9b", "gemma-2-9b-it",  "gemma-2-27b", "gemma-2-27b-it", "shieldgemma-2b", "shieldgemma-9b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
     args = parser.parse_args()
