@@ -50,14 +50,14 @@ class LMSparseAutoencoderSessionloader():
         
         return model, sparse_autoencoder, activations_loader
     
-    def get_model(self, model_name: str):
+    def get_model(self, model_name: str, dtype: str = "bfloat16"):
         '''
         Loads a model from transformer lens
         '''
         
         # Todo: add check that model_name is valid
         
-        model = HookedTransformer.from_pretrained(model_name)
+        model = HookedTransformer.from_pretrained(model_name, dtype=dtype)
         
         return model 
     
