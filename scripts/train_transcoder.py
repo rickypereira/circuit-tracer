@@ -89,7 +89,7 @@ def create_training_configs(
         total_training_tokens = 1_000_000 * 60, store_batch_size = 32, 
         use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
         resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
-        seed=42) -> Dict[int, LanguageModelSAERunnerConfig]:
+        seed=42, dtype=torch.float32) -> Dict[int, LanguageModelSAERunnerConfig]:
     layer_to_config = {}
     for layer in range(n_layers):
         cfg = LanguageModelSAERunnerConfig(
@@ -184,6 +184,7 @@ def train(model_name: str) -> List[str]:
 def get_n_layers(model_name: str) -> int:
     supported_models = {
         'gemma-2-27b' : 45,
+        'gpt2': 11,
     }
     if model_name not in supported_models:
         raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
@@ -195,7 +196,7 @@ def parse_arguments() -> argparse.Namespace:
     # Model Arguments
     parser.add_argument(
         "--model_name", type=str, default='gemma-2-2b',
-        choices=['gemma-2-2b', "gemma-2-27b", "gpt2-small"],
+        choices=['gemma-2-2b', "gemma-2-27b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
     args = parser.parse_args()
