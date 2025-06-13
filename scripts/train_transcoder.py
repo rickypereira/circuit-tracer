@@ -184,7 +184,10 @@ def train_worker(rank, world_size, model_name):
             print(cfg)
 
         loader = LMSparseAutoencoderSessionloader(cfg)
-        model, sparse_autoencoder, activations_loader = loader.load_session()
+        model, sparse_autoencoder, activations_loader = loader.load_session(
+            rank=rank,
+            world_size=world_size
+        )
 
         # Move models to the correct device
         model.to(rank)

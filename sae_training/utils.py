@@ -20,7 +20,7 @@ class LMSparseAutoencoderSessionloader():
         self.cfg = cfg
         
     # DDP Change: The method now accepts rank and world_size to pass down.
-    def load_session(self) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
+    def load_session(self, rank: int, world_size: int) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
         '''
         Loads a session for training a sparse autoencoder on a language model.
         '''
@@ -37,7 +37,7 @@ class LMSparseAutoencoderSessionloader():
 
         model.to(self.cfg.device)
         # DDP Change: Pass rank and world_size to the activations loader.
-        activations_loader = self.get_activations_loader(self.cfg, model, self.cfg.rank, self.cfg.world_size)
+        activations_loader = self.get_activations_loader(self.cfg, model, rank, world_size)
         sparse_autoencoder = self.initialize_sparse_autoencoder(self.cfg)
             
         return model, sparse_autoencoder, activations_loader
