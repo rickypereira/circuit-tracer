@@ -24,9 +24,17 @@ class LMSparseAutoencoderSessionloader():
         '''
         Loads a session for training a sparse autoencoder on a language model.
         '''
-        
-        model = self.get_model(self.cfg.model_name)
-        model.to(self.cfg.device)
+        model_dtype = self.cfg.dtype
+        if model_dtype == torch.bfloat16 and not torch.cuda.is_bf16_supported():
+            print(f"Warning: bfloat16 is not supported on this device. Falling back to float16.")
+            model_dtype = torch.float16
+
+        # Load the model directly onto the correct device in the correct precision.
+        model = self.get_model(
+            model_name=self.cfg.model_name,
+            device=self.cfg.device,
+            torch_dtype=model_dtype
+        )
         # DDP Change: Pass rank and world_size to the activations loader.
         activations_loader = self.get_activations_loader(self.cfg, model, self.cfg.rank, self.cfg.world_size)
         sparse_autoencoder = self.initialize_sparse_autoencoder(self.cfg)
@@ -60,16 +68,16 @@ class LMSparseAutoencoderSessionloader():
         
         return model, sparse_autoencoder, activations_loader
     
-    def get_model(self, model_name: str, dtype: str = "bfloat16"):
+    def get_model(self, model_name: str, device: str, torch_dtype: torch.dtype):
         '''
-        Loads a model from transformer lens
+        Loads a model from transformer lens directly onto a device in a specific dtype.
         '''
-        
-        # This dtype is for loading, but the model will be used with cfg.dtype
-        # We cast the model to the correct dtype in the training script if needed.
-        model = HookedTransformer.from_pretrained(model_name)
-        
-        return model 
+        model = HookedTransformer.from_pretrained(
+            model_name,
+            torch_dtype=torch_dtype,
+            device_map=device,
+        )
+        return model
     
     def initialize_sparse_autoencoder(self, cfg: LanguageModelSAERunnerConfig):
         '''
