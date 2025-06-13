@@ -32,7 +32,7 @@ class LMSparseAutoencoderSessionloader():
         # Load the model directly onto the correct device in the correct precision.
         model = self.get_model(
             model_name=self.cfg.model_name,
-            device=self.cfg.device
+            torch_dtype=model_dtype
         )
 
         model.to(self.cfg.device)
