@@ -19,34 +19,44 @@ class LMSparseAutoencoderSessionloader():
     def __init__(self, cfg: LanguageModelSAERunnerConfig):
         self.cfg = cfg
         
-        
-    def load_session(self) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
+    # DDP Change: The method now accepts rank and world_size to pass down.
+    def load_session(self, rank: int = 0, world_size: int = 1) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
         '''
         Loads a session for training a sparse autoencoder on a language model.
         '''
         
         model = self.get_model(self.cfg.model_name)
         model.to(self.cfg.device)
-        activations_loader = self.get_activations_loader(self.cfg, model)
+        # DDP Change: Pass rank and world_size to the activations loader.
+        activations_loader = self.get_activations_loader(self.cfg, model, rank, world_size)
         sparse_autoencoder = self.initialize_sparse_autoencoder(self.cfg)
             
         return model, sparse_autoencoder, activations_loader
     
     @classmethod
-    def load_session_from_pretrained(cls, path: str) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
+    # DDP Change: The method now accepts rank and world_size to pass down.
+    def load_session_from_pretrained(cls, path: str, rank: int = 0, world_size: int = 1) -> Tuple[HookedTransformer, SparseAutoencoder, ActivationsStore]:
         '''
         Loads a session for analysing a pretrained sparse autoencoder.
         '''
         if torch.backends.mps.is_available():
-            cfg = torch.load(path, map_location="mps")["cfg"]
-            cfg.device = "mps"
+            map_location = "mps"
         elif torch.cuda.is_available():
-            cfg = torch.load(path, map_location="cuda")["cfg"]
+            map_location = "cuda"
         else:
-            cfg = torch.load(path, map_location="cpu")["cfg"]
+            map_location = "cpu"
+            
+        # Ensure device in cfg matches the DDP rank's device
+        state = torch.load(path, map_location=map_location)
+        cfg = state["cfg"]
+        if "cuda" in str(map_location):
+             cfg.device = f"cuda:{rank}"
+        else:
+             cfg.device = map_location
 
-        model, _, activations_loader = cls(cfg).load_session()
-        sparse_autoencoder = SparseAutoencoder.load_from_pretrained(path)
+        # DDP Change: Pass rank and world_size to the load_session call.
+        model, _, activations_loader = cls(cfg).load_session(rank=rank, world_size=world_size)
+        sparse_autoencoder = SparseAutoencoder.load_from_pretrained(path, device=cfg.device)
         
         return model, sparse_autoencoder, activations_loader
     
@@ -55,9 +65,9 @@ class LMSparseAutoencoderSessionloader():
         Loads a model from transformer lens
         '''
         
-        # Todo: add check that model_name is valid
-        
-        model = HookedTransformer.from_pretrained(model_name, dtype=dtype)
+        # This dtype is for loading, but the model will be used with cfg.dtype
+        # We cast the model to the correct dtype in the training script if needed.
+        model = HookedTransformer.from_pretrained(model_name)
         
         return model 
     
@@ -70,17 +80,24 @@ class LMSparseAutoencoderSessionloader():
         
         return sparse_autoencoder
     
-    def get_activations_loader(self, cfg: LanguageModelSAERunnerConfig, model: HookedTransformer):
+    # DDP Change: The method now accepts rank and world_size.
+    def get_activations_loader(self, cfg: LanguageModelSAERunnerConfig, model: HookedTransformer, rank: int, world_size: int):
         '''
         Loads a DataLoaderBuffer for the activations of a language model.
         '''
         
+        # DDP Change: Pass rank and world_size to the ActivationsStore constructor.
         activations_loader = ActivationsStore(
-            cfg, model,
+            cfg,
+            model,
+            rank=rank,
+            world_size=world_size
         )
         
         return activations_loader
 
+# This function is for offline processing of cached activations and is not
+# affected by the DDP training loop. No changes needed.
 def shuffle_activations_pairwise(datapath: str, buffer_idx_range: Tuple[int, int]):
     """
     Shuffles two buffers on disk.

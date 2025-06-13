@@ -1,7 +1,8 @@
-# Transcoder training sample code
+# Transcoder training sample code for DDP
 
 """
-This sample script can be used to train a transcoder on a model of your choice.
+This sample script can be used to train a transcoder on a model of your choice
+using DistributedDataParallel (DDP) for multi-GPU training.
 This code, along with the transcoder training code more generally, was largely
     adapted from an older version of Joseph Bloom's SAE training repo, the latest
     version of which can be found at https://github.com/jbloomAus/SAELens.
@@ -13,8 +14,12 @@ Transcoder-specific parameters are marked as such in comments.
 
 import logging
 import torch
+import torch.distributed as dist
+import torch.multiprocessing as mp
+from torch.nn.parallel import DistributedDataParallel as DDP
+from torch.utils.data.distributed import DistributedSampler
 import argparse
-import os 
+import os
 import sys
 import numpy as np
 from pathlib import Path
@@ -72,6 +77,16 @@ def setup_environment():
         print("Please log in using: huggingface-cli login")
         sys.exit(1)
 
+def setup(rank, world_size):
+    """Initializes the distributed process group."""
+    os.environ['MASTER_ADDR'] = 'localhost'
+    os.environ['MASTER_PORT'] = '12355'
+    dist.init_process_group("nccl", rank=rank, world_size=world_size)
+
+def cleanup():
+    """Cleans up the distributed process group."""
+    dist.destroy_process_group()
+
 # Setup paths and environment
 paths = setup_paths(DEFAULT_PROJECT_PATH)
 
@@ -83,13 +98,13 @@ from sae_training.train_sae_on_language_model import train_sae_on_language_model
 # --- Training ---
 def create_training_configs(
         model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=4608, d_out=4608,
-        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
-        dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
+        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean',
+        dataset_path="Skylion007/openwebtext", train_batch_size = 4096,
         context_size = 32, lr_warm_up_steps=5000, n_batches_in_buffer = 32,
-        total_training_tokens = 1_000_000 * 60, store_batch_size = 16, 
+        total_training_tokens = 1_000_000 * 60, store_batch_size = 16,
         use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
         resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
-        seed=42, dtype=torch.float32) -> Dict[int, LanguageModelSAERunnerConfig]:
+        seed=42, dtype=torch.float32, rank=0, world_size=1) -> Dict[int, LanguageModelSAERunnerConfig]:
     layer_to_config = {}
     for layer in range(n_layers):
         cfg = LanguageModelSAERunnerConfig(
@@ -106,7 +121,7 @@ def create_training_configs(
             # SAE Parameters
             expansion_factor = expansion_factor,
             b_dec_init_method = b_dec_init_method,
-            
+
             # Training Parameters
             lr = lr,
             l1_coefficient = l1_coefficient,
@@ -114,12 +129,12 @@ def create_training_configs(
             train_batch_size = train_batch_size,
             context_size = context_size,
             lr_warm_up_steps=lr_warm_up_steps,
-            
+
             # Activation Store Parameters
             n_batches_in_buffer = n_batches_in_buffer,
             total_training_tokens = total_training_tokens,
             store_batch_size = store_batch_size,
-            
+
             # Dead Neurons and Sparsity
             use_ghost_grads=use_ghost_grads,
             feature_sampling_method = feature_sampling_method,
@@ -130,10 +145,10 @@ def create_training_configs(
 
             # WANDB
             log_to_wandb = False,
-            
+
             # Misc
             use_tqdm = True,
-            device = "cuda",
+            device = f"cuda:{rank}",
             seed = seed,
             n_checkpoints = n_checkpoints,
             checkpoint_path = checkpoint_path,
@@ -143,22 +158,50 @@ def create_training_configs(
     return layer_to_config
 
 
-def train(model_name: str) -> List[str]:
+def train_worker(rank, world_size, model_name):
+    """The worker function for DDP training."""
+    setup(rank, world_size)
+
     checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
     n_layers = get_n_layers(model_name)
     layer_to_configs = create_training_configs(
-        model_name=model_name, 
-        n_layers=n_layers, 
+        model_name=model_name,
+        n_layers=n_layers,
         checkpoint_path=checkpoint_path,
-        lr = 0.0004, l1_coefficient = 0.00014
+        lr = 0.0004, l1_coefficient = 0.00014,
+        rank=rank,
+        world_size=world_size
         )
     paths = []
     for _, cfg in layer_to_configs.items():
-        print(f"About to start training with lr {cfg.lr} and l1 {cfg.l1_coefficient}")
-        print(f"Checkpoint path: {cfg.checkpoint_path}")
-        print(cfg)
+        if rank == 0:
+            print(f"About to start training with lr {cfg.lr} and l1 {cfg.l1_coefficient}")
+            print(f"Checkpoint path: {cfg.checkpoint_path}")
+            print(cfg)
+
         loader = LMSparseAutoencoderSessionloader(cfg)
         model, sparse_autoencoder, activations_loader = loader.load_session()
+
+        # Move models to the correct device
+        model.to(rank)
+        sparse_autoencoder.to(rank)
+
+        # Wrap models with DDP
+        model = DDP(model, device_ids=[rank])
+        sparse_autoencoder = DDP(sparse_autoencoder, device_ids=[rank])
+
+        # It's crucial to adapt the activations_loader for distributed training.
+        # This usually involves using a DistributedSampler.
+        # The implementation details depend on the 'sae-training' library.
+        # Assuming the activations_loader has a dataloader attribute,
+        # you would do something like this:
+        #
+        # train_sampler = DistributedSampler(activations_loader.dataset, num_replicas=world_size, rank=rank)
+        # activations_loader.dataloader.sampler = train_sampler
+        #
+        # Since the internal structure of activations_loader is not fully known,
+        # this part may need adjustment based on the library's specifics.
+
         # train SAE
         sparse_autoencoder = train_sae_on_language_model(
             model, sparse_autoencoder, activations_loader,
@@ -173,12 +216,16 @@ def train(model_name: str) -> List[str]:
             wandb_log_frequency = cfg.wandb_log_frequency
         )
 
-        # save sae to checkpoints folder
-        path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.get_name()}.pt"
-        sparse_autoencoder.save_model(path)
-        paths.append(path)
+        # save sae to checkpoints folder on the main process
+        if rank == 0:
+            # When saving, unwrap the model from DDP
+            path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.module.get_name()}.pt"
+            sparse_autoencoder.module.save_model(path)
+            paths.append(path)
+
+    cleanup()
     return paths
-        
+
 # --- Argument Parsing and Main Execution ---
 
 def get_n_layers(model_name: str) -> int:
@@ -199,12 +246,16 @@ def get_n_layers(model_name: str) -> int:
 
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
-    parser = argparse.ArgumentParser(description="Train Transcoders.")
+    parser = argparse.ArgumentParser(description="Train Transcoders with DDP.")
     # Model Arguments
     parser.add_argument(
         "--model_name", type=str, default='gemma-2-2b',
         choices=['gemma-2-2b', "gemma-2-2b-it", "gemma-2-9b", "gemma-2-9b-it",  "gemma-2-27b", "gemma-2-27b-it", "shieldgemma-2b", "shieldgemma-9b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
+    )
+    parser.add_argument(
+        "--world_size", type=int, default=8,
+        help="Number of GPUs to use for training."
     )
     args = parser.parse_args()
     return args
@@ -215,10 +266,13 @@ def main():
     setup_environment()
 
     args = parse_arguments()
-    print(f"Training model {args.model_name}")
-    paths = train(model_name=args.model_name)
-    for path in paths:
-        print(f"Saved: {path}")
+    print(f"Training model {args.model_name} on {args.world_size} GPUs.")
+
+    mp.spawn(train_worker,
+             args=(args.world_size, args.model_name),
+             nprocs=args.world_size,
+             join=True)
+
 
 if __name__ == "__main__":
     main()
