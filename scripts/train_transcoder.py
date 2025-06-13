@@ -97,14 +97,14 @@ from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
 # --- Training ---
 def create_training_configs(
-        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=4608, d_out=4608,
+        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=3584, d_out=3584,
         expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean',
         dataset_path="Skylion007/openwebtext", train_batch_size = 4096,
         context_size = 32, lr_warm_up_steps=5000, n_batches_in_buffer = 32,
         total_training_tokens = 1_000_000 * 60, store_batch_size = 16,
         use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
         resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
-        seed=42, dtype=torch.float32, rank=0, world_size=1) -> Dict[int, LanguageModelSAERunnerConfig]:
+        seed=42, dtype=torch.float16, rank=0, world_size=1) -> Dict[int, LanguageModelSAERunnerConfig]:
     layer_to_config = {}
     for layer in range(n_layers):
         cfg = LanguageModelSAERunnerConfig(
@@ -152,7 +152,11 @@ def create_training_configs(
             seed = seed,
             n_checkpoints = n_checkpoints,
             checkpoint_path = checkpoint_path,
-            dtype = torch.float32,
+            dtype = dtype,
+
+            # DDP
+            rank=rank,
+            world_size=world_size
         )
         layer_to_config[layer] = cfg
     return layer_to_config
@@ -204,7 +208,7 @@ def train_worker(rank, world_size, model_name):
 
         # train SAE
         sparse_autoencoder = train_sae_on_language_model(
-            model, sparse_autoencoder, activations_loader,
+            rank, world_size, model, sparse_autoencoder, activations_loader,
             n_checkpoints=cfg.n_checkpoints,
             batch_size = cfg.train_batch_size,
             feature_sampling_method = cfg.feature_sampling_method,

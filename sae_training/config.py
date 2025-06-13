@@ -110,6 +110,10 @@ class LanguageModelSAERunnerConfig(RunnerConfig):
     checkpoint_path: str = "checkpoints"
     use_tqdm: bool = True
 
+    # DDP
+    rank: int = 0
+    world_size: int = 0
+
     def __post_init__(self):
         super().__post_init__()
         self.d_sae = self.d_in * self.expansion_factor
