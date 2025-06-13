@@ -29,11 +29,14 @@ class LMSparseAutoencoderSessionloader():
             print(f"Warning: bfloat16 is not supported on this device. Falling back to float16.")
             model_dtype = torch.float16
 
+        model.to(self.cfg.device)
+
         # Load the model directly onto the correct device in the correct precision.
         model = self.get_model(
             model_name=self.cfg.model_name,
             device=self.cfg.device,
-            torch_dtype=model_dtype
+            torch_dtype=model_dtype,
+            low_cpu_mem_usage=True,
         )
         # DDP Change: Pass rank and world_size to the activations loader.
         activations_loader = self.get_activations_loader(self.cfg, model, self.cfg.rank, self.cfg.world_size)
