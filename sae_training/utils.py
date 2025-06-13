@@ -29,15 +29,13 @@ class LMSparseAutoencoderSessionloader():
             print(f"Warning: bfloat16 is not supported on this device. Falling back to float16.")
             model_dtype = torch.float16
 
-        model.to(self.cfg.device)
-
         # Load the model directly onto the correct device in the correct precision.
         model = self.get_model(
             model_name=self.cfg.model_name,
-            device=self.cfg.device,
-            torch_dtype=model_dtype,
-            low_cpu_mem_usage=True,
+            device=self.cfg.device
         )
+
+        model.to(self.cfg.device)
         # DDP Change: Pass rank and world_size to the activations loader.
         activations_loader = self.get_activations_loader(self.cfg, model, self.cfg.rank, self.cfg.world_size)
         sparse_autoencoder = self.initialize_sparse_autoencoder(self.cfg)
@@ -71,14 +69,13 @@ class LMSparseAutoencoderSessionloader():
         
         return model, sparse_autoencoder, activations_loader
     
-    def get_model(self, model_name: str, device: str, torch_dtype: torch.dtype):
+    def get_model(self, model_name: str, torch_dtype: torch.dtype):
         '''
         Loads a model from transformer lens directly onto a device in a specific dtype.
         '''
         model = HookedTransformer.from_pretrained(
             model_name,
-            torch_dtype=torch_dtype,
-            device_map=device,
+            torch_dtype=torch_dtype
         )
         return model
     
