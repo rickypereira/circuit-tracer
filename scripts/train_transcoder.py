@@ -181,12 +181,11 @@ def train_worker(rank, world_size, model_name):
         if rank == 0:
             print(f"About to start training with lr {cfg.lr} and l1 {cfg.l1_coefficient}")
             print(f"Checkpoint path: {cfg.checkpoint_path}")
-            print(cfg)
 
         loader = LMSparseAutoencoderSessionloader(cfg)
 
         print(f"RANK {rank}: ABOUT TO CALL THE NEW load_session with correct arguments.")
-        
+
         model, sparse_autoencoder, activations_loader = loader.load_session(
             rank=rank,
             world_size=world_size
