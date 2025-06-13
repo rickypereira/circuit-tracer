@@ -184,6 +184,9 @@ def train_worker(rank, world_size, model_name):
             print(cfg)
 
         loader = LMSparseAutoencoderSessionloader(cfg)
+
+        print(f"RANK {rank}: ABOUT TO CALL THE NEW load_session with correct arguments.")
+        
         model, sparse_autoencoder, activations_loader = loader.load_session(
             rank=rank,
             world_size=world_size
