@@ -68,7 +68,8 @@ class ActivationsStore:
         """
         batch_size = self.cfg.store_batch_size
         context_size = self.cfg.context_size
-        device = self.cfg.device
+        device = self.model.device
+        
 
         batch_tokens = torch.zeros(size=(0, context_size), device=device, dtype=torch.long, requires_grad=False)
         current_batch = []
