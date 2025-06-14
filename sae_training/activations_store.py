@@ -81,7 +81,10 @@ class ActivationsStore:
 
             if not self.cfg.is_dataset_tokenized:
                 s = raw_item["text"]
-                tokens = self.model.to_tokens(s, truncate=True, move_to_device=True).squeeze(0)
+                # Step 1: Tell to_tokens NOT to move the tensor. It will be created on the CPU.
+                tokens = self.model.to_tokens(s, truncate=True, move_to_device=False).squeeze(0)
+                # Step 2: Manually move the tensor to the correct device, which we get from the model's parameters.
+                tokens = tokens.to(next(self.model.parameters()).device)
             else:
                 tokens = torch.tensor(raw_item["tokens"], dtype=torch.long, device=device, requires_grad=False)
 
