@@ -1,0 +1,2446 @@
+Ensuring environment is set up...
+'circuit-tracer' library found.
+Hugging Face token found.
+Training model gemma-2-2b on 8 GPUs.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+WARNING:root:float16 models may not work on CPU. Consider using a GPU or bfloat16.
+WARNING:root:You tried to specify center_unembed=True for a model using logit softcap, but this can't be done! Softcapping is not invariant upon adding a constant Setting center_unembed=False instead.
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 3: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 1: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 7: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 5: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  4.37it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+About to start training with lr 0.0004 and l1 0.00014
+Checkpoint path: /home/rickpereira/output/gemma-2-2b/yzosnp6t
+RANK 0: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 6: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 4: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 114688-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 2: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.23s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.83s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.83s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.92s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.94s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.04s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.91s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.76s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.67s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.71s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.69s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.17s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.43s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.83s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.83s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.81s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.82s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.86s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.20s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.54s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.78s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.20s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.54s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.19s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.54s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.20s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.55s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.18s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.55s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.14s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.49s/it]
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+Dataset tokenization status: False
+Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+
+--- [Rank 0] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:0
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 7] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:7, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:7
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
+
+[rank0]:[W614 21:18:32.922784700 ProcessGroupNCCL.cpp:1476] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 1] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:1, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
+  Other: (device):   device=cuda:1
+
+[rank1]:[W614 21:18:33.925352629 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=8, addr=[localhost]:43604, remote=[localhost]:12355): failed to recv, got 0 bytes
+Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:678 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f4b903785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7f4b78fa8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baae40 (0x7f4b78faae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5bab74a (0x7f4b78fab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7f4b78fa51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f4b35fe09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7f4b25ad44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7f4b910d31f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7f4b9115389c in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank1]:[W614 21:18:33.928635350 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
+[rank1]:[W614 21:18:34.928854540 TCPStore.cpp:106] [c10d] sendBytes failed on SocketImpl(fd=8, addr=[localhost]:43604, remote=[localhost]:12355): Broken pipe
+Exception raised from sendBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:653 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f4b903785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7f4b78fa8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baa358 (0x7f4b78faa358 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5babb3e (0x7f4b78fabb3e in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x298 (0x7f4b78fa5198 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f4b35fe09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7f4b25ad44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7f4b910d31f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7f4b9115389c in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank1]:[W614 21:18:34.932079330 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Broken pipe
+[rank1]:[W614 21:18:35.932283923 TCPStore.cpp:106] [c10d] sendBytes failed on SocketImpl(fd=8, addr=[localhost]:43604, remote=[localhost]:12355): Broken pipe
+Exception raised from sendBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:653 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f4b903785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7f4b78fa8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baa358 (0x7f4b78faa358 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5babb3e (0x7f4b78fabb3e in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x298 (0x7f4b78fa5198 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f4b35fe09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7f4b25ad44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7f4b910d31f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7f4b9115389c in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank1]:[W614 21:18:35.935468382 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Broken pipe
+W0614 21:18:35.718000 1490057 torch/multiprocessing/spawn.py:169] Terminating process 1490126 via signal SIGTERM
+W0614 21:18:35.718000 1490057 torch/multiprocessing/spawn.py:169] Terminating process 1490127 via signal SIGTERM
+W0614 21:18:35.719000 1490057 torch/multiprocessing/spawn.py:169] Terminating process 1490128 via signal SIGTERM
+W0614 21:18:35.720000 1490057 torch/multiprocessing/spawn.py:169] Terminating process 1490131 via signal SIGTERM
+W0614 21:18:35.721000 1490057 torch/multiprocessing/spawn.py:169] Terminating process 1490133 via signal SIGTERM
+Traceback (most recent call last):
+  File "/home/rickpereira/circuit-tracer/scripts/train_transcoder.py", line 287, in <module>
+    main()
+  File "/home/rickpereira/circuit-tracer/scripts/train_transcoder.py", line 280, in main
+    mp.spawn(train_worker,
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 215, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 3 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 90, in _wrap
+    fn(i, *args)
+  File "/home/rickpereira/circuit-tracer/scripts/train_transcoder.py", line 189, in train_worker
+    model, sparse_autoencoder, activations_loader = loader.load_session(
+                                                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer/sae_training/utils.py", line 40, in load_session
+    activations_loader = self.get_activations_loader(self.cfg, model, rank, world_size)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer/sae_training/utils.py", line 98, in get_activations_loader
+    activations_loader = ActivationsStore(
+                         ^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 55, in __init__
+    self.storage_buffer, self.storage_buffer_out = self.get_buffer(self.cfg.n_batches_in_buffer // 2)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 161, in get_buffer
+    refill_batch_tokens = self.get_batch_tokens()
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 117, in get_batch_tokens
+    batch_tokens = torch.cat((batch_tokens, full_batch.unsqueeze(0)), dim=0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:3 and cuda:0! (when checking argument for argument tensors in method wrapper_CUDA_cat)
+
