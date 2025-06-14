@@ -102,6 +102,7 @@ class ActivationsStore:
                     current_length = context_size
 
                 if current_length == context_size:
+                    full_batch = torch.cat(current_batch, dim=0)
                    # --- START: DEBUGGING PRINT STATEMENTS ---
                     # This will print diagnostics from each GPU for the first few batches.
                     # We check the item index to avoid spamming the console.
@@ -113,8 +114,6 @@ class ActivationsStore:
                             f"  Other: (device):   device={device}\n"
                         )
                     # --- END: DEBUGGING PRINT STATEMENTS ---
-
-                    full_batch = torch.cat(current_batch, dim=0)
                     batch_tokens = torch.cat((batch_tokens, full_batch.unsqueeze(0)), dim=0)
                     current_batch = []
                     current_length = 0
