@@ -21,7 +21,7 @@ class ActivationsStore:
         self.rank = rank
         self.world_size = world_size
         
-        self.dataset = load_dataset(cfg.dataset_path, split="train", streaming=True)
+        self.dataset = load_dataset(cfg.dataset_path, split="train", streaming=True, trust_remote_code=True)
         self.iterable_dataset = iter(self.dataset)
         self.dataset_item_index = 0
         
