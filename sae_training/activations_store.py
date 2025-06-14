@@ -102,6 +102,18 @@ class ActivationsStore:
                     current_length = context_size
 
                 if current_length == context_size:
+                   # --- START: DEBUGGING PRINT STATEMENTS ---
+                    # This will print diagnostics from each GPU for the first few batches.
+                    # We check the item index to avoid spamming the console.
+                    if self.dataset_item_index < (self.world_size * 3): # Prints for the first ~3 items per GPU
+                        print(
+                            f"\n--- [Rank {self.rank}] Debugging torch.cat --- \n"
+                            f"  Culprit 1 (batch_tokens): device={batch_tokens.device}, shape={batch_tokens.shape}\n"
+                            f"  Culprit 2 (full_batch):   device={full_batch.device}, shape={full_batch.shape}\n"
+                            f"  Other: (device):   device={device}\n"
+                        )
+                    # --- END: DEBUGGING PRINT STATEMENTS ---
+
                     full_batch = torch.cat(current_batch, dim=0)
                     batch_tokens = torch.cat((batch_tokens, full_batch.unsqueeze(0)), dim=0)
                     current_batch = []
