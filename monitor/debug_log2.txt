@@ -1616,7 +1616,444 @@ Using Ghost Grads.
 We will reset the sparsity calculation 29 times.
 Number of tokens when resampling: 8224
 Number tokens in sparsity calculation window: 2.05e+06
+RANK 4: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
 RANK 1: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 5: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 3: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+About to start training with lr 0.0004 and l1 0.00014
+Checkpoint path: /home/rickpereira/output/gemma-2-2b/wapcg2we
+RANK 0: ABOUT TO CALL THE NEW load_session with correct arguments.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
+n_tokens_per_buffer (millions): 0.008192
+Lower bound: n_contexts_per_buffer (millions): 0.000256
+Total training steps: 29296
+Total wandb updates: 2929
+n_tokens_per_feature_sampling_window (millions): 65.536
+n_tokens_per_dead_feature_window (millions): 327.68
+Using Ghost Grads.
+We will reset the sparsity calculation 29 times.
+Number of tokens when resampling: 8224
+Number tokens in sparsity calculation window: 2.05e+06
+RANK 6: ABOUT TO CALL THE NEW load_session with correct arguments.
 Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
 Total training steps: 29296
 Total wandb updates: 2929
@@ -1790,462 +2227,25 @@ Using Ghost Grads.
 We will reset the sparsity calculation 29 times.
 Number of tokens when resampling: 8224
 Number tokens in sparsity calculation window: 2.05e+06
-RANK 3: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:00,  3.89it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-RANK 6: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.77it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-About to start training with lr 0.0004 and l1 0.00014
-Checkpoint path: /home/rickpereira/output/gemma-2-2b/1yxre086
-RANK 0: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-RANK 4: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-RANK 5: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.61s/it]Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
-Run name: 73728-L1-0.00014-LR-0.0004-Tokens-6.000e+07
-n_tokens_per_buffer (millions): 0.008192
-Lower bound: n_contexts_per_buffer (millions): 0.000256
-Total training steps: 29296
-Total wandb updates: 2929
-n_tokens_per_feature_sampling_window (millions): 65.536
-n_tokens_per_dead_feature_window (millions): 327.68
-Using Ghost Grads.
-We will reset the sparsity calculation 29 times.
-Number of tokens when resampling: 8224
-Number tokens in sparsity calculation window: 2.05e+06
 RANK 2: ABOUT TO CALL THE NEW load_session with correct arguments.
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.17s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.72s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:03<00:01,  1.88s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.18s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.21s/it]
-Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.75s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.92s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.66s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.60s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.68s/it]
-Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.77s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:03,  3.20s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  1.88s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.08s/it]
-Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.35s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:03,  3.09s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  1.95s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.21s/it]
-Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  1.81s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.02s/it]
-Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.24s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.21s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  1.85s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.18s/it]
-Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  1.83s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.17s/it]
-Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.80s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.59s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.91s/it]
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:02,  1.19s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.16s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:04,  2.36s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  2.98s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.10s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  3.00s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.02s/it]Loading checkpoint shards:  33%|███▎      | 1/3 [00:02<00:05,  3.00s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:05<00:02,  2.61s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.62s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:05<00:00,  1.84s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.48s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.04s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.20s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.79s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.21s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.50s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.87s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.50s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.93s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.89s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.87s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:07<00:03,  3.88s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.55s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.53s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.17s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.54s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.15s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:07<00:00,  2.53s/it]
 WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
 WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
 WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
-WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
 WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
+WARNING:root:With reduced precision, it is advised to use `from_pretrained_no_processing` instead of `from_pretrained`.
 WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
 WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
 WARNING:root:You are not using LayerNorm, so the writing weights can't be centered! Skipping
@@ -2255,7 +2255,7 @@ WARNING:root:You are not using LayerNorm, so the writing weights can't be center
 Loaded pretrained model gemma-2-2b into HookedTransformer
 Moving model to device:  cuda
 Dataset tokenization status: False
-Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]Rank 0 filling buffer:   6%|▋         | 1/16 [00:00<00:09,  1.57it/s]Rank 0 filling buffer:  31%|███▏      | 5/16 [00:00<00:01,  8.31it/s]Rank 0 filling buffer:  56%|█████▋    | 9/16 [00:00<00:00, 14.58it/s]Rank 0 filling buffer:  88%|████████▊ | 14/16 [00:00<00:00, 22.19it/s]Rank 0 filling buffer: 100%|██████████| 16/16 [00:01<00:00, 15.83it/s]
+Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]Rank 0 filling buffer:   6%|▋         | 1/16 [00:00<00:07,  2.08it/s]Rank 0 filling buffer:  31%|███▏      | 5/16 [00:00<00:01, 10.51it/s]Rank 0 filling buffer:  62%|██████▎   | 10/16 [00:00<00:00, 19.39it/s]Rank 0 filling buffer:  94%|█████████▍| 15/16 [00:00<00:00, 26.76it/s]Rank 0 filling buffer: 100%|██████████| 16/16 [00:00<00:00, 19.26it/s]
 
 --- [Rank 0] Debugging torch.cat --- 
   Culprit 1 (batch_tokens): device=cuda:0, shape=torch.Size([0, 32])
@@ -2400,398 +2400,106 @@ Dataset tokenization status: False
   Culprit 2 (full_batch):   device=cuda:0, shape=torch.Size([32])
   Other: (device):   device=cuda:0
 
-Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]Rank 0 filling buffer:  25%|██▌       | 4/16 [00:00<00:00, 33.12it/s]Rank 0 filling buffer:  50%|█████     | 8/16 [00:00<00:00, 34.39it/s]Rank 0 filling buffer:  75%|███████▌  | 12/16 [00:00<00:00, 34.22it/s]Rank 0 filling buffer: 100%|██████████| 16/16 [00:00<00:00, 33.68it/s]Rank 0 filling buffer: 100%|██████████| 16/16 [00:00<00:00, 33.80it/s]
+Rank 0 filling buffer:   0%|          | 0/16 [00:00<?, ?it/s]Rank 0 filling buffer:  25%|██▌       | 4/16 [00:00<00:00, 37.53it/s]Rank 0 filling buffer:  56%|█████▋    | 9/16 [00:00<00:00, 41.70it/s]Rank 0 filling buffer:  88%|████████▊ | 14/16 [00:00<00:00, 42.11it/s]Rank 0 filling buffer: 100%|██████████| 16/16 [00:00<00:00, 40.91it/s]
 Reinitialized b_dec with mean of activations across 8 GPUs.
 Reinitialized b_dec_out with mean of activations across 8 GPUs.
-Training SAE:   0%|          | 0/60000000 [00:00<?, ?it/s]0| MSE Loss 0.037 | L1 0.945:   0%|          | 0/60000000 [00:00<?, ?it/s]0| MSE Loss 0.037 | L1 0.945:   0%|          | 16384/60000000 [00:00<10:46, 92711.81it/s]1| MSE Loss nan | L1 nan:   0%|          | 16384/60000000 [00:00<10:46, 92711.81it/s]    1| MSE Loss nan | L1 nan:   0%|          | 32768/60000000 [00:00<14:17, 69900.16it/s]Loaded pretrained model gemma-2-2b into HookedTransformer
+Training SAE:   0%|          | 0/60000000 [00:00<?, ?it/s]0| MSE Loss 0.037 | L1 0.943:   0%|          | 0/60000000 [00:00<?, ?it/s]0| MSE Loss 0.037 | L1 0.943:   0%|          | 16384/60000000 [00:00<27:29, 36372.48it/s]1| MSE Loss nan | L1 nan:   0%|          | 16384/60000000 [00:01<27:29, 36372.48it/s]    1| MSE Loss nan | L1 nan:   0%|          | 32768/60000000 [00:01<46:27, 21515.38it/s]Loaded pretrained model gemma-2-2b into HookedTransformer
 Moving model to device:  cuda
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-
---- [Rank 6] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
-  Other: (device):   device=cuda:6
-
-Loaded pretrained model gemma-2-2b into HookedTransformer
-Moving model to device:  cuda
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-
---- [Rank 4] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
-  Other: (device):   device=cuda:4
-
-Loaded pretrained model gemma-2-2b into HookedTransformer
-Moving model to device:  cuda
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
-
-
---- [Rank 3] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
-  Other: (device):   device=cuda:3
+--- [Rank 2] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
+  Other: (device):   device=cuda:2
 
 Loaded pretrained model gemma-2-2b into HookedTransformer
 Moving model to device:  cuda
@@ -3040,351 +2748,626 @@ Moving model to device:  cuda
 Loaded pretrained model gemma-2-2b into HookedTransformer
 Moving model to device:  cuda
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 
---- [Rank 5] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
-  Other: (device):   device=cuda:5
+--- [Rank 4] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:4, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:4, shape=torch.Size([32])
+  Other: (device):   device=cuda:4
 
 Loaded pretrained model gemma-2-2b into HookedTransformer
 Moving model to device:  cuda
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([0, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([1, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([2, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([3, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([4, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([5, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([6, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
 
---- [Rank 2] Debugging torch.cat --- 
-  Culprit 1 (batch_tokens): device=cuda:2, shape=torch.Size([7, 32])
-  Culprit 2 (full_batch):   device=cuda:2, shape=torch.Size([32])
-  Other: (device):   device=cuda:2
+--- [Rank 3] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:3, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:3, shape=torch.Size([32])
+  Other: (device):   device=cuda:3
 
-1| MSE Loss nan | L1 nan:   0%|          | 32768/60000000 [00:01<34:52, 28662.69it/s]
-[rank0]:[W614 21:40:59.545462636 CUDAGuardImpl.h:119] Warning: CUDA warning: uncorrectable ECC error encountered (function destroyEvent)
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+
+--- [Rank 6] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:6, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:6, shape=torch.Size([32])
+  Other: (device):   device=cuda:6
+
+Loaded pretrained model gemma-2-2b into HookedTransformer
+Moving model to device:  cuda
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([0, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([1, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([2, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([3, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([4, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([5, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([6, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+
+--- [Rank 5] Debugging torch.cat --- 
+  Culprit 1 (batch_tokens): device=cuda:5, shape=torch.Size([7, 32])
+  Culprit 2 (full_batch):   device=cuda:5, shape=torch.Size([32])
+  Other: (device):   device=cuda:5
+
+1| MSE Loss nan | L1 nan:   0%|          | 32768/60000000 [00:02<1:07:30, 14805.75it/s]
 terminate called after throwing an instance of 'c10::Error'
   what():  CUDA error: uncorrectable ECC error encountered
-CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1
 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
 
 Exception raised from c10_cuda_check_implementation at /pytorch/c10/cuda/CUDAException.cpp:43 (most recent call first):
-frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7fa0137785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe0 (0x7fa01370d4a2 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x3c2 (0x7fa013ba5422 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
-frame #3: <unknown function> + 0x1e79f (0x7fa013b6d79f in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
-frame #4: <unknown function> + 0x20060 (0x7fa013b6f060 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
-frame #5: <unknown function> + 0x2028c (0x7fa013b6f28c in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
-frame #6: <unknown function> + 0x4582d2 (0x7fa00b4582d2 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
-frame #7: c10::TensorImpl::~TensorImpl() + 0x9 (0x7fa013752f39 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #8: c10d::Reducer::~Reducer() + 0x329 (0x7f9ffc7daed9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #9: <unknown function> + 0xc5b032 (0x7fa00bc5b032 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
-frame #10: <unknown function> + 0x37d94a (0x7fa00b37d94a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
-frame #11: <unknown function> + 0xc655b1 (0x7fa00bc655b1 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
-frame #12: <unknown function> + 0x3885b0 (0x7fa00b3885b0 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
-frame #13: <unknown function> + 0x388bf1 (0x7fa00b388bf1 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f44b89785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) + 0xe0 (0x7f44b890d4a2 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(int, char const*, char const*, int, bool) + 0x3c2 (0x7f44b8ddc422 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+frame #3: <unknown function> + 0x1e79f (0x7f44b8da479f in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+frame #4: <unknown function> + 0x20060 (0x7f44b8da6060 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+frame #5: <unknown function> + 0x2028c (0x7f44b8da628c in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10_cuda.so)
+frame #6: <unknown function> + 0x4582d2 (0x7f44b02582d2 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #7: c10::TensorImpl::~TensorImpl() + 0x9 (0x7f44b8952f39 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #8: c10d::Reducer::~Reducer() + 0x329 (0x7f44a15daed9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #9: <unknown function> + 0xc5b032 (0x7f44b0a5b032 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #10: <unknown function> + 0x37d94a (0x7f44b017d94a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #11: <unknown function> + 0xc655b1 (0x7f44b0a655b1 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #12: <unknown function> + 0x3885b0 (0x7f44b01885b0 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
+frame #13: <unknown function> + 0x388bf1 (0x7f44b0188bf1 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_python.so)
 frame #14: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x515e16]
 frame #15: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x58c7d5]
 frame #16: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x567963]
-frame #17: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x56793f]
-frame #18: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x56793f]
-frame #19: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x5657de]
-frame #20: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x5dd1a9]
-frame #21: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x578a92]
-frame #22: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x50d29c]
-frame #23: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x6690f1]
-frame #24: _PyEval_EvalFrameDefault + 0x7deb (0x532edb in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #25: PyEval_EvalCode + 0xbb (0x5236bb in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #26: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x647d97]
-frame #27: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x6456ef]
-frame #28: PyRun_StringFlags + 0x5d (0x56f02d in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #29: PyRun_SimpleStringFlags + 0x36 (0x63ed66 in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #30: Py_RunMain + 0x454 (0x6502c4 in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #31: Py_BytesMain + 0x27 (0x627d37 in /home/rickpereira/circuit-tracer-workspace/bin/python)
-frame #32: <unknown function> + 0x2724a (0x7fa01479824a in /lib/x86_64-linux-gnu/libc.so.6)
-frame #33: __libc_start_main + 0x85 (0x7fa014798305 in /lib/x86_64-linux-gnu/libc.so.6)
-frame #34: _start + 0x21 (0x627bd1 in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #17: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x5657de]
+frame #18: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x56579d]
+frame #19: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x578a2d]
+frame #20: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x58c44e]
+frame #21: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x50d29c]
+frame #22: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x6690f1]
+frame #23: _PyEval_EvalFrameDefault + 0x7deb (0x532edb in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #24: PyEval_EvalCode + 0xbb (0x5236bb in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #25: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x647d97]
+frame #26: /home/rickpereira/circuit-tracer-workspace/bin/python() [0x6456ef]
+frame #27: PyRun_StringFlags + 0x5d (0x56f02d in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #28: PyRun_SimpleStringFlags + 0x36 (0x63ed66 in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #29: Py_RunMain + 0x454 (0x6502c4 in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #30: Py_BytesMain + 0x27 (0x627d37 in /home/rickpereira/circuit-tracer-workspace/bin/python)
+frame #31: <unknown function> + 0x2724a (0x7f44b969424a in /lib/x86_64-linux-gnu/libc.so.6)
+frame #32: __libc_start_main + 0x85 (0x7f44b9694305 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #33: _start + 0x21 (0x627bd1 in /home/rickpereira/circuit-tracer-workspace/bin/python)
 
-[rank2]:[W614 21:40:59.838036821 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=6, addr=[localhost]:47122, remote=[localhost]:12355): failed to recv, got 0 bytes
+[rank5]:[W614 21:49:40.964607304 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=6, addr=[localhost]:43946, remote=[localhost]:12355): failed to recv, got 0 bytes
 Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:678 (most recent call first):
-frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f0c645785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #1: <unknown function> + 0x5ba8afe (0x7f0c4d1a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #2: <unknown function> + 0x5baae40 (0x7f0c4d1aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #3: <unknown function> + 0x5bab74a (0x7f0c4d1ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7f0c4d1a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f0c0a1e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
-frame #6: <unknown function> + 0xd44a3 (0x7f0bf9cd44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
-frame #7: <unknown function> + 0x891f5 (0x7f0c652321f5 in /lib/x86_64-linux-gnu/libc.so.6)
-frame #8: <unknown function> + 0x10989c (0x7f0c652b289c in /lib/x86_64-linux-gnu/libc.so.6)
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7efdd09785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7efdb95a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baae40 (0x7efdb95aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5bab74a (0x7efdb95ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7efdb95a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7efd765e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7efd660d44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7efdd16961f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7efdd171689c in /lib/x86_64-linux-gnu/libc.so.6)
 
-[rank2]:[W614 21:40:59.841283372 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 2] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
-[rank7]:[W614 21:40:59.838234917 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=6, addr=[localhost]:47182, remote=[localhost]:12355): failed to recv, got 0 bytes
+[rank5]:[W614 21:49:40.968530204 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 5] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
+[rank1]:[W614 21:49:40.965624400 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=8, addr=[localhost]:43968, remote=[localhost]:12355): failed to recv, got 0 bytes
 Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:678 (most recent call first):
-frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7fda8b7785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #1: <unknown function> + 0x5ba8afe (0x7fda747a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #2: <unknown function> + 0x5baae40 (0x7fda747aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #3: <unknown function> + 0x5bab74a (0x7fda747ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7fda747a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7fda317e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
-frame #6: <unknown function> + 0xd44a3 (0x7fda212d44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
-frame #7: <unknown function> + 0x891f5 (0x7fda8c8171f5 in /lib/x86_64-linux-gnu/libc.so.6)
-frame #8: <unknown function> + 0x10989c (0x7fda8c89789c in /lib/x86_64-linux-gnu/libc.so.6)
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7fd51fd785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7fd508da8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baae40 (0x7fd508daae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5bab74a (0x7fd508dab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7fd508da51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7fd4c5de09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7fd4b58d44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7fd520d981f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7fd520e1889c in /lib/x86_64-linux-gnu/libc.so.6)
 
-[rank7]:[W614 21:40:59.841357667 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 7] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
-[rank1]:[W614 21:40:59.838265134 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=6, addr=[localhost]:47160, remote=[localhost]:12355): failed to recv, got 0 bytes
+[rank3]:[W614 21:49:40.965523476 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=7, addr=[localhost]:44002, remote=[localhost]:12355): failed to recv, got 0 bytes
 Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:678 (most recent call first):
-frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f6c8c5785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #1: <unknown function> + 0x5ba8afe (0x7f6c755a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #2: <unknown function> + 0x5baae40 (0x7f6c755aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #3: <unknown function> + 0x5bab74a (0x7f6c755ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7f6c755a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f6c325e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
-frame #6: <unknown function> + 0xd44a3 (0x7f6c220d44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
-frame #7: <unknown function> + 0x891f5 (0x7f6c8d5c21f5 in /lib/x86_64-linux-gnu/libc.so.6)
-frame #8: <unknown function> + 0x10989c (0x7f6c8d64289c in /lib/x86_64-linux-gnu/libc.so.6)
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7fe9367785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x5ba8afe (0x7fe91f3a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x5baae40 (0x7fe91f3aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #3: <unknown function> + 0x5bab74a (0x7fe91f3ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7fe91f3a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
+frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7fe8dc3e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #6: <unknown function> + 0xd44a3 (0x7fe8cbed44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #7: <unknown function> + 0x891f5 (0x7fe9374a81f5 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #8: <unknown function> + 0x10989c (0x7fe93752889c in /lib/x86_64-linux-gnu/libc.so.6)
 
-[rank1]:[W614 21:40:59.841525521 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
-[rank5]:[W614 21:40:59.838276038 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=7, addr=[localhost]:47190, remote=[localhost]:12355): failed to recv, got 0 bytes
-Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:678 (most recent call first):
-frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x98 (0x7f710a1785e8 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libc10.so)
-frame #1: <unknown function> + 0x5ba8afe (0x7f70f31a8afe in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #2: <unknown function> + 0x5baae40 (0x7f70f31aae40 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #3: <unknown function> + 0x5bab74a (0x7f70f31ab74a in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x2a9 (0x7f70f31a51a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so)
-frame #5: c10d::ProcessGroupNCCL::heartbeatMonitor() + 0x379 (0x7f70b01e09a9 in /home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
-frame #6: <unknown function> + 0xd44a3 (0x7f709fcd44a3 in /lib/x86_64-linux-gnu/libstdc++.so.6)
-frame #7: <unknown function> + 0x891f5 (0x7f710b1ec1f5 in /lib/x86_64-linux-gnu/libc.so.6)
-frame #8: <unknown function> + 0x10989c (0x7f710b26c89c in /lib/x86_64-linux-gnu/libc.so.6)
-
-[rank5]:[W614 21:40:59.841845009 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 5] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
-W0614 21:41:00.455000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496766 via signal SIGTERM
-W0614 21:41:00.457000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496767 via signal SIGTERM
-W0614 21:41:00.458000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496768 via signal SIGTERM
-W0614 21:41:00.458000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496769 via signal SIGTERM
-W0614 21:41:00.458000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496770 via signal SIGTERM
-W0614 21:41:00.459000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496771 via signal SIGTERM
-W0614 21:41:00.459000 1496696 torch/multiprocessing/spawn.py:169] Terminating process 1496772 via signal SIGTERM
+[rank1]:[W614 21:49:40.969438539 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
+[rank3]:[W614 21:49:40.969475192 ProcessGroupNCCL.cpp:1659] [PG ID 0 PG GUID 0(default_pg) Rank 3] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: failed to recv, got 0 bytes
+W0614 21:49:40.124000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499229 via signal SIGTERM
+W0614 21:49:40.127000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499230 via signal SIGTERM
+W0614 21:49:40.129000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499231 via signal SIGTERM
+W0614 21:49:40.130000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499232 via signal SIGTERM
+W0614 21:49:40.130000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499233 via signal SIGTERM
+W0614 21:49:40.132000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499234 via signal SIGTERM
+W0614 21:49:40.132000 1499157 torch/multiprocessing/spawn.py:169] Terminating process 1499235 via signal SIGTERM
 Traceback (most recent call last):
   File "/home/rickpereira/circuit-tracer/scripts/train_transcoder.py", line 287, in <module>
     main()
@@ -3402,44 +3385,22 @@ torch.multiprocessing.spawn.ProcessRaisedException:
 
 -- Process 0 terminated with the following error:
 Traceback (most recent call last):
-  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 209, in next_batch
-    return next(self.dataloader)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
-    data = self._next_data()
-           ^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
-    index = self._next_index()  # may raise StopIteration
-            ^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 723, in _next_index
-    return next(self._sampler_iter)  # may raise StopIteration
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-StopIteration
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/multiprocessing/spawn.py", line 90, in _wrap
     fn(i, *args)
   File "/home/rickpereira/circuit-tracer/scripts/train_transcoder.py", line 215, in train_worker
     sparse_autoencoder = train_sae_on_language_model(
                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer/sae_training/train_sae_on_language_model.py", line 170, in train_sae_on_language_model
-    next_batch = activation_store.next_batch()
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 211, in next_batch
-    self.dataloader = self.get_data_loader()
-                      ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 188, in get_data_loader
-    new_buffer, new_buffer_out = self.get_buffer(self.cfg.n_batches_in_buffer // 2)
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/rickpereira/circuit-tracer/sae_training/activations_store.py", line 142, in get_buffer
-    torch.cuda.empty_cache()
-  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/cuda/memory.py", line 222, in empty_cache
-    torch._C._cuda_emptyCache()
-RuntimeError: CUDA error: uncorrectable ECC error encountered
-CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1
-Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
-
+  File "/home/rickpereira/circuit-tracer/sae_training/train_sae_on_language_model.py", line 259, in train_sae_on_language_model
+    loss.backward()
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/autograd/__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "/home/rickpereira/circuit-tracer-workspace/lib/python3.11/site-packages/torch/autograd/graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.distributed.DistBackendError: NCCL error in: /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3353, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.26.2
+ncclUnhandledCudaError: Call to CUDA function failed.
+Last error:
+Cuda failure 214 'uncorrectable ECC error encountered'
 
