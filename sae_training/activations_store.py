@@ -139,7 +139,6 @@ class ActivationsStore:
 
     def get_buffer(self, n_batches_in_buffer):
         gc.collect()
-        torch.cuda.empty_cache()
         
         context_size = self.cfg.context_size
         batch_size = self.cfg.store_batch_size

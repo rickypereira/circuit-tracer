@@ -263,7 +263,7 @@ def parse_arguments() -> argparse.Namespace:
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
     parser.add_argument(
-        "--world_size", type=int, default=8,
+        "--world_size", type=int, default=6,
         help="Number of GPUs to use for training."
     )
     args = parser.parse_args()
