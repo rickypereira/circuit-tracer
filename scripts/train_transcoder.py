@@ -97,7 +97,7 @@ from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
 # --- Training ---
 def create_training_configs(
-        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=3584, d_out=3584,
+        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=2304, d_out=2304,
         expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean',
         dataset_path="Skylion007/openwebtext", train_batch_size = 2048,
         context_size = 32, lr_warm_up_steps=5000, n_batches_in_buffer = 32,
@@ -239,7 +239,7 @@ def train_worker(rank, world_size, model_name):
 
 def get_n_layers(model_name: str) -> int:
     supported_models = {
-        "gemma-2-2b" : 25,
+        "gemma-2-2b" : 25, # d_in=2304
         "gemma-2-2b-it" : 25,
         "gemma-2-9b" : 41,
         "gemma-2-9b-it" : 41,
