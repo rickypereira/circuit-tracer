@@ -21,7 +21,7 @@ COPY . .
 
 # Define the entry point for your training script.
 # Replace 'train_transcoders.py' with the actual name of your main training script.
-ENTRYPOINT ["python", "train_transcoders.py"]
+ENTRYPOINT ["python", "scripts/train_transcoders.py"]
 
 # Optional: If you need specific environment variables set for your script, add them here.
 # ENV MY_CUSTOM_VAR="some_value"
