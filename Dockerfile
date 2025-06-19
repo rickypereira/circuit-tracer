@@ -17,15 +17,13 @@ FROM us-docker.pkg.dev/deeplearning-platform-release/gcr.io/pytorch-cu124.2-4.py
 
 # Set working directory inside the container
 WORKDIR /app
+COPY . .
+COPY requirements.txt .
 
-# Copy your requirements.txt and install your additional dependencies.
+# Install your Python dependencies.
 # The base image already has PyTorch, CUDA, cuDNN etc.
 # Your requirements.txt is extensive, so this step is critical.
-COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy your entire GitHub repository content (assuming your Dockerfile is at the root)
-COPY . .
 
 # Define the entry point for your training script.
 # Replace 'train_transcoders.py' with the actual name of your main training script.
