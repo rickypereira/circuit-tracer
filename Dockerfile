@@ -13,7 +13,7 @@
 # You might need to check the exact available tags on Google's Deep Learning Containers list.
 # A safe bet is often 'pytorch-gpu.<latest_stable_pytorch_version>.py311:latest' or specifically matching.
 # For CUDA 12.4, PyTorch 2.4.x is commonly paired with it. Let's aim for a PyTorch 2.4.
-FROM us-docker.pkg.dev/deeplearning-platform-release/gcr.io/pytorch-gpu.2-4.py311:latest
+FROM us-docker.pkg.dev/deeplearning-platform-release/gcr.io/pytorch-cu124.2-4.py310:latest
 
 # Set working directory inside the container
 WORKDIR /app
