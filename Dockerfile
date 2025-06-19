@@ -18,10 +18,7 @@ FROM us-docker.pkg.dev/deeplearning-platform-release/gcr.io/pytorch-cu124.2-4.py
 # Set working directory inside the container
 WORKDIR /app
 COPY . .
-
-# Define the entry point for your training script.
-# Replace 'train_transcoders.py' with the actual name of your main training script.
-ENTRYPOINT ["python", "scripts/train_transcoders.py"]
+ENTRYPOINT ["python", "scripts/train_transcoder.py"]
 
 # Optional: If you need specific environment variables set for your script, add them here.
 # ENV MY_CUSTOM_VAR="some_value"
