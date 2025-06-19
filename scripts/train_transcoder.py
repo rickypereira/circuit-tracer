@@ -27,7 +27,7 @@ from typing import List, Dict, Tuple, Optional, Any
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-DEFAULT_PROJECT_PATH=Path(f"/home/ubuntu/us-east-1").resolve()
+DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 
 # --- Helper Functions ---
 def setup_paths(base_dir: Path) -> Dict[str, Path]:
@@ -35,6 +35,7 @@ def setup_paths(base_dir: Path) -> Dict[str, Path]:
     project_path = base_dir
     workspace_path = project_path / "circuit-tracer"
     output_dir = project_path / "output"
+    print("Workspace Path: {workspace_path}")
 
     if str(workspace_path) not in sys.path:
         logging.info(f"Adding {workspace_path} to sys.path")
