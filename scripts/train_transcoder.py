@@ -27,7 +27,7 @@ from typing import List, Dict, Tuple, Optional, Any
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
+DEFAULT_PROJECT_PATH=Path(f"/app").resolve()
 
 # --- Helper Functions ---
 def setup_paths(base_dir: Path) -> Dict[str, Path]:
