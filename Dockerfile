@@ -8,4 +8,5 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 ARG TRANSCODERS_HF_TOKEN
 ENV TRANSCODERS_HF_TOKEN=$TRANSCODERS_HF_TOKEN
+ENV PYTHONPATH=/app:${PYTHONPATH}
 ENTRYPOINT ["python", "scripts/train_transcoder.py"]
