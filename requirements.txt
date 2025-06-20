@@ -10,7 +10,8 @@ pandas==2.2.3
 pyarrow==20.0.0
 safetensors==0.5.3
 tokenizers==0.21.1
-torch==2.7.0
+torch==2.4.0
+torchvision==0.19.0
 tornado==6.5.1
 tqdm==4.67.1
 transformer-lens==2.15.4
