@@ -137,14 +137,23 @@ def setup_environment():
         print("Please install it by running: pip install git+https://github.com/safety-research/circuit-tracer.git")
         sys.exit(1)
 
-    try:
-        # Check for huggingface login
-        from huggingface_hub.hf_api import HfApi
-        HfApi().whoami()
-        print("Hugging Face token found.")
-    except Exception:
-        print("Hugging Face token not found.")
-        print("Please log in using: huggingface-cli login")
+    # Check for huggingface token via environment variable or then try HfApi().whoami()
+    # The Hugging Face libraries will automatically use HF_TOKEN or HUGGING_FACE_HUB_TOKEN
+    # if they are set. HfApi().whoami() will also use them if available.
+    if os.getenv("HF_TOKEN") or os.getenv("HUGGING_FACE_HUB_TOKEN"):
+        print("Hugging Face token found in environment variables.")
+        try:
+            from huggingface_hub.hf_api import HfApi
+            HfApi().whoami() # This will use the token from env var if present
+            print("Successfully authenticated with Hugging Face Hub.")
+        except Exception as e:
+            print(f"Error validating Hugging Face token from environment variables: {e}")
+            print("Please ensure your Hugging Face token is valid.")
+            sys.exit(1)
+    else:
+        print("Hugging Face token not found in environment variables.")
+        print("Please set HF_TOKEN or HUGGING_FACE_HUB_TOKEN environment variable.")
+        print("You can generate one here: https://huggingface.co/settings/tokens")
         sys.exit(1)
 
 
