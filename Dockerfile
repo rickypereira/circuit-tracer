@@ -10,4 +10,4 @@ RUN pip install "numpy==1.26.4" \
 ARG TRANSCODERS_HF_TOKEN
 ENV TRANSCODERS_HF_TOKEN=$TRANSCODERS_HF_TOKEN
 ENV PYTHONPATH=/app:${PYTHONPATH}
-ENTRYPOINT ["python", "scripts/train_transcoder.py"]
+ENTRYPOINT ["python3", "scripts/train_transcoder.py"]
