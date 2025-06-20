@@ -1,6 +1,4 @@
 datasets==3.6.0
-einops==0.8.1
-ipython==9.2.0
 jaxtyping==0.3.2
 tqdm==4.67.1
 wandb==0.19.11
@@ -9,3 +7,4 @@ huggingface-hub==0.32.3
 transformer-lens==2.15.4
 transformers==4.52.4
 torch==2.7.0
+einops
