@@ -24,58 +24,35 @@ import sys
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any
+from sae_training.config import LanguageModelSAERunnerConfig
+from sae_training.utils import LMSparseAutoencoderSessionloader
+from sae_training.train_sae_on_language_model import train_sae_on_language_model
+from sae_training.config import LanguageModelSAERunnerConfig
+from sae_training.utils import LMSparseAutoencoderSessionloader
+from sae_training.train_sae_on_language_model import train_sae_on_language_model
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 DEFAULT_PROJECT_PATH=Path(f"/app").resolve()
 
 # --- Helper Functions ---
-def setup_paths(base_dir: Path) -> Dict[str, Path]:
-    """Sets up project paths based on a base directory."""
-    project_path = base_dir
-    workspace_path = project_path / "circuit-tracer"
-    output_dir = project_path / "output"
-    print("Workspace Path: {workspace_path}")
-
-    if str(workspace_path) not in sys.path:
-        logging.info(f"Adding {workspace_path} to sys.path")
-        sys.path.append(str(workspace_path))
-
-    logging.info(f"Setting MODEL_PATH environment variable to {project_path}")
-    os.environ['MODEL_PATH'] = str(project_path)
-
-    logging.info(f"Ensuring output directory exists: {output_dir}")
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    return {
-        "project": project_path,
-        "workspace": workspace_path,
-        "output": output_dir,
-    }
-
 def setup_environment():
-    """
-    Handles environment setup. In the original notebook, this installed a git repository.
-    For this script, we assume the user has installed the library via pip as per
-    the instructions in the docstring.
-    """
     print("Ensuring environment is set up...")
-    try:
-        import circuit_tracer
-        print("'circuit-tracer' library found.")
-    except ImportError:
-        print("Error: 'circuit-tracer' library not found.")
-        print("Please install it by running: pip install git+https://github.com/safety-research/circuit-tracer.git")
-        sys.exit(1)
-
-    try:
-        # Check for huggingface login
-        from huggingface_hub.hf_api import HfApi
-        HfApi().whoami()
-        print("Hugging Face token found.")
-    except Exception:
-        print("Hugging Face token not found.")
-        print("Please log in using: huggingface-cli login")
+    # ... (circuit_tracer check) ...
+    hf_token = os.getenv("TRANSCODERS_HF_TOKEN")
+    if hf_token:
+        print("Hugging Face token found in environment variables.")
+        try:
+            # This call will use the token from the env var automatically
+            HfApi().whoami()
+            print("Successfully authenticated with Hugging Face Hub.")
+        except Exception as e:
+            print(f"Error validating Hugging Face token: {e}")
+            print("Please ensure your Hugging Face token (HF_TOKEN) is valid.")
+            sys.exit(1)
+    else:
+        print("Hugging Face token (HF_TOKEN or HUGGING_FACE_HUB_TOKEN) not found in environment variables.")
+        print("Please set HF_TOKEN environment variable when running the Docker container.")
         sys.exit(1)
 
 def setup(rank, world_size):
@@ -87,14 +64,6 @@ def setup(rank, world_size):
 def cleanup():
     """Cleans up the distributed process group."""
     dist.destroy_process_group()
-
-# Setup paths and environment
-paths = setup_paths(DEFAULT_PROJECT_PATH)
-
-from sae_training.config import LanguageModelSAERunnerConfig
-from sae_training.utils import LMSparseAutoencoderSessionloader
-from sae_training.train_sae_on_language_model import train_sae_on_language_model
-
 
 # --- Training ---
 def create_training_configs(

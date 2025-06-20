@@ -6,4 +6,6 @@ COPY . .
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+ARG TRANSCODERS_HF_TOKEN
+ENV TRANSCODERS_HF_TOKEN=$TRANSCODERS_HF_TOKEN
 ENTRYPOINT ["python", "scripts/train_transcoder.py"]
