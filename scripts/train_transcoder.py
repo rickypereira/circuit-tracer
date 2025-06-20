@@ -18,6 +18,7 @@ import torch.distributed as dist
 import torch.multiprocessing as mp
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data.distributed import DistributedSampler
+from huggingface_hub import HfApi
 import argparse
 import os
 import sys
@@ -39,7 +40,11 @@ DEFAULT_PROJECT_PATH=Path(f"/app").resolve()
 def setup_environment():
     print("Ensuring environment is set up...")
     # ... (circuit_tracer check) ...
-    hf_token = os.getenv("TRANSCODERS_HF_TOKEN")
+    hf_token = os.getenv("HF_TOKEN")
+    if not hf_token:
+        print("Hugging Face token not found.")
+        sys.exit(1)
+
     if hf_token:
         print("Hugging Face token found in environment variables.")
         try:
@@ -48,7 +53,7 @@ def setup_environment():
             print("Successfully authenticated with Hugging Face Hub.")
         except Exception as e:
             print(f"Error validating Hugging Face token: {e}")
-            print("Please ensure your Hugging Face token (HF_TOKEN) is valid.")
+            print(f"Please ensure your Hugging Face token (HF_TOKEN) is valid.")
             sys.exit(1)
     else:
         print("Hugging Face token (HF_TOKEN or HUGGING_FACE_HUB_TOKEN) not found in environment variables.")
