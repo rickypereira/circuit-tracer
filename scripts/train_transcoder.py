@@ -9,12 +9,14 @@ import sys
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Literal
+from contextlib import nullcontext, redirect_stdout
+from datetime import timedelta
 
 # --- Import from sparsify ---
 from sparsify import TranscoderConfig, Trainer, TrainConfig
 from sparsify.data import chunk_and_tokenize
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from datasets import load_dataset
+from datasets import load_dataset, Dataset # Import Dataset for type hinting
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -44,15 +46,14 @@ def setup_environment():
 
 def setup(rank, world_size):
     """Initializes the distributed process group."""
-    # These environment variables are usually set by torchrun/torch.distributed.launch
-    # but good to have as fallbacks or for local testing.
     os.environ['MASTER_ADDR'] = os.getenv('MASTER_ADDR', 'localhost')
     os.environ['MASTER_PORT'] = os.getenv('MASTER_PORT', '12355')
-    dist.init_process_group("nccl", rank=rank, world_size=world_size)
+    dist.init_process_group("nccl", rank=rank, world_size=world_size, timeout=timedelta(weeks=1))
+    torch.cuda.set_device(rank)
 
 def cleanup():
     """Cleans up the distributed process group."""
-    if dist.is_initialized(): # Only destroy if initialized
+    if dist.is_initialized():
         dist.destroy_process_group()
 
 # --- Training ---
@@ -69,20 +70,28 @@ def create_training_configs_sparsify(
         grad_acc_steps: int = 1,
         micro_acc_steps: int = 1,
         run_name: Optional[str] = None,
-        wandb_log_frequency: int = 1
-        ) -> Dict[int, TrainConfig]:
-    # 1. Create the SparseCoderConfig (TranscoderConfig)
+        wandb_log_frequency: int = 1,
+        # New parameters from command line
+        k: Optional[int] = None,
+        layer_stride: Optional[int] = None,
+        ctx_len: int = 2048, # Context length is often part of data processing
+        distribute_modules: bool = False,
+        load_in_8bit: bool = False, # Handled during model loading
+        ) -> TrainConfig:
     transcoder_sae_cfg = TranscoderConfig(
         expansion_factor=expansion_factor,
+        # If 'k' relates to sparsity or top-k, it might go here
+        # Assuming 'k' might be a parameter for TranscoderConfig if it controls sparsity
+        k=k if k is not None else 0 # Defaulting k to 0 if not provided
     )
 
-    # 2. Generate the list of hookpoints based on n_layers
-    # hookpoints = [f"blocks.{layer}.ln2.hook_normalized" for layer in range(n_layers)]
-    layers = list(range(n_layers)) # Also include layers if you want to specify them explicitly
+    layers = list(range(n_layers))
+    if layer_stride is not None:
+        layers = layers[::layer_stride]
 
-    # 3. Create the TrainConfig
+
     cfg = TrainConfig(
-        sae=transcoder_sae_cfg, # Pass the transcoder_sae_cfg to the 'sae' field
+        sae=transcoder_sae_cfg,
         batch_size=train_batch_size,
         lr=lr,
         lr_warmup_steps=lr_warm_up_steps,
@@ -97,80 +106,89 @@ def create_training_configs_sparsify(
         micro_acc_steps=micro_acc_steps,
         run_name=run_name,
         wandb_log_frequency=wandb_log_frequency,
-        # Other parameters from TrainConfig can be set here or left as defaults
+        distribute_modules=distribute_modules
     )
-
     return cfg
 
 
-def train_worker(rank, world_size, model_name):
+def train_worker(rank, world_size, args):
     """The worker function for training using sparsify with torchrun."""
-    setup(rank, world_size)
-    device = f"cuda:{rank}"
-    torch.cuda.set_device(device) # Ensure this process uses the correct GPU
+    with nullcontext() if rank == 0 else redirect_stdout(None):
+        setup(rank, world_size)
+        device = f"cuda:{rank}"
+        torch.cuda.set_device(device)
 
-    checkpoint_dir = DEFAULT_PROJECT_PATH / "output" / model_name
-    # Only create dir on main process to avoid race conditions if multiple processes try to create it
-    if rank == 0:
-        checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    # Ensure all processes wait for directory creation
-    if world_size > 1:
-        dist.barrier()
+        checkpoint_dir = DEFAULT_PROJECT_PATH / "output" / args.model_name
+        if rank == 0:
+            checkpoint_dir.mkdir(parents=True, exist_ok=True)
+        if world_size > 1:
+            dist.barrier()
 
 
-    n_layers = get_n_layers(model_name)
-    sparsify_cfg = create_training_configs_sparsify(
-        n_layers=n_layers,
-        checkpoint_dir=checkpoint_dir,
-        train_batch_size=4,
-        lr = 0.0004,
-        grad_acc_steps=512,
+        n_layers = get_n_layers(args.model_name)
+        sparsify_cfg = create_training_configs_sparsify(
+            n_layers=n_layers,
+            checkpoint_dir=checkpoint_dir,
+            train_batch_size=args.batch_size,
+            lr = 0.0004, # Or make this an argument as well
+            grad_acc_steps=args.grad_acc_steps,
+            micro_acc_steps=args.micro_acc_steps,
+            k=args.k,
+            layer_stride=args.layer_stride,
+            ctx_len=args.ctx_len, # Pass ctx_len to the config if needed by sparsify
         )
-    paths = []
+        paths = []
 
-    # Load model and tokenizer once per process
-    # Explicitly move model to the correct device for this process
-    repo_name = get_repo_name(model_name=model_name)
-    nf4_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-        bnb_4bit_use_double_quant=True,
-    )
-    model = AutoModelForCausalLM.from_pretrained(
-        repo_name,
-        quantization_config=nf4_config,
-    ).to(device) # Move model to specific device here
+        if args.load_in_8bit:
+            # For 8-bit loading, BitsAndBytesConfig will handle the compute_dtype
+            nf8_config = BitsAndBytesConfig(
+                load_in_8bit=True,
+                bnb_8bit_quant_type="int8",
+                bnb_8bit_compute_dtype=torch.float16, 
+                bnb_8bit_use_double_quant=True,
+            )
+            model = AutoModelForCausalLM.from_pretrained(
+                get_repo_name(args.model_name),
+                quantization_config=nf8_config,
+                device_map={"": f"cuda:{rank}"},
+                torch_dtype=dtype,
+            )
+        else:
+            # Determine dtype for model loading for non-8bit
+            if torch.cuda.is_bf16_supported():
+                dtype = torch.bfloat16
+            else:
+                dtype = torch.float16
 
-    tokenizer = AutoTokenizer.from_pretrained(repo_name)
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
+            model = AutoModelForCausalLM.from_pretrained(
+                get_repo_name(args.model_name),
+                device_map={"": f"cuda:{rank}"},
+                torch_dtype=dtype
+            )
 
-    # Load and tokenize the dataset once per process
-    # Sparsify's Trainer, when launched with torchrun, should handle distributed data loading
-    # (e.g., through DistributedSampler implicitly or by shard logic)
-    dataset = load_dataset("EleutherAI/SmolLM2-135M-10B", split="train")
-    tokenized_dataset = chunk_and_tokenize(dataset, tokenizer)
+        tokenizer = AutoTokenizer.from_pretrained(get_repo_name(args.model_name))
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
 
-    # Sparsify's Trainer manages the SAE creation and training
-    # It's expected to handle DDP internally when run via torchrun
-    trainer = Trainer(
-        sparsify_cfg,
-        tokenized_dataset,
-        model,
-        # No need to pass rank/world_size explicitly to Trainer here,
-        # as it will infer them from the torch.distributed environment.
-    )
+        # Load and tokenize the dataset once per process
+        dataset = load_dataset("EleutherAI/SmolLM2-135M-10B", split="train")
+        tokenized_dataset = chunk_and_tokenize(dataset, tokenizer, max_seq_len=args.ctx_len)
 
-    trainer.fit()
+        trainer = Trainer(
+            sparsify_cfg,
+            tokenized_dataset,
+            model,
+        )
 
-    # Save SAE to checkpoints folder on the main process
-    final_sae_path = checkpoint_dir / f"final_sae_layer.pt"
-    trainer.save_model(final_sae_path)
-    paths.append(str(final_sae_path))
+        trainer.fit()
 
-    cleanup() # Call cleanup at the end of the worker
-    return paths # Return paths only from rank 0 is meaningful for the user
+        if rank == 0:
+            final_sae_path = checkpoint_dir / f"final_sae_layer.pt"
+            trainer.save_model(final_sae_path)
+            paths.append(str(final_sae_path))
+
+        cleanup()
+        return paths
 
 # --- Argument Parsing and Main Execution ---
 
@@ -182,7 +200,7 @@ def get_repo_name(model_name: str) -> str:
         "gemma-2-9b" : "google/gemma-2-9b",
         "gemma-2-9b-it" : "google/gemma-2-9b-it",
         "gemma-2-27b" : "google/gemma-2-27b",
-        "gemma-2-27b" : "google/gemma-2-27b-it",
+        "gemma-2-27b-it" : "google/gemma-2-27b-it",
         "shieldgemma-2b": "google/shieldgemma-2b",
         "shieldgemma-9b": "google/shieldgemma-9b",
         "gpt-2": "openai-community/gpt2",
@@ -215,12 +233,38 @@ def parse_arguments() -> argparse.Namespace:
         choices=['gemma-2-2b', "gemma-2-2b-it", "gemma-2-9b", "gemma-2-9b-it",  "gemma-2-27b", "gemma-2-27b-it", "shieldgemma-2b", "shieldgemma-9b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
-    # The --world_size argument is usually provided by torchrun as --nproc_per_node,
-    # and then read from the environment by torch.distributed.
-    # We keep it as a placeholder if you wanted to test with mp.spawn directly.
+    # Add new arguments
     parser.add_argument(
-        "--world_size", type=int, default=1, # Default to 1 for local testing without torchrun
-        help="Number of GPUs to use for training. (Set by torchrun via env vars)."
+        "--distribute_modules", action="store_true",
+        help="Whether to distribute modules across GPUs (handled by Sparsify Trainer's DDP)."
+    )
+    parser.add_argument(
+        "--batch_size", type=int, default=4, # This is per-GPU batch size
+        help="Batch size per GPU."
+    )
+    parser.add_argument(
+        "--layer_stride", type=int, default=1,
+        help="Stride for selecting layers (e.g., 2 means every other layer)."
+    )
+    parser.add_argument(
+        "--grad_acc_steps", type=int, default=1,
+        help="Number of gradient accumulation steps."
+    )
+    parser.add_argument(
+        "--ctx_len", type=int, default=2048,
+        help="Context length for tokenization."
+    )
+    parser.add_argument(
+        "--k", type=int, default=None,
+        help="Parameter 'k' for sparse autoencoder configuration (e.g., top-k selection)."
+    )
+    parser.add_argument(
+        "--load_in_8bit", action="store_true",
+        help="Load the model in 8-bit quantization."
+    )
+    parser.add_argument(
+        "--micro_acc_steps", type=int, default=1,
+        help="Number of micro accumulation steps."
     )
     args = parser.parse_args()
     return args
@@ -231,19 +275,15 @@ def main():
     setup_environment()
 
     args = parse_arguments()
-    print(f"Training model {args.model_name} on {args.world_size} GPUs (if launched with torchrun).")
-
-    # When using torchrun, it sets up the environment variables (LOCAL_RANK, RANK, WORLD_SIZE, MASTER_ADDR, MASTER_PORT)
-    # and then executes your script. You don't call mp.spawn yourself within the script.
-    # The 'rank' and 'world_size' will be available from the environment.
     current_rank = int(os.environ.get("RANK", 0))
     current_world_size = int(os.environ.get("WORLD_SIZE", 1))
 
-    # The train_worker function will be called directly by torchrun for each process.
-    # If not launched with torchrun, it will run as a single process (rank 0, world_size 1).
-    train_worker(current_rank, current_world_size, args.model_name)
+    print(f"Training model {args.model_name} on rank {current_rank}/{current_world_size} GPUs.")
+    print(f"Arguments: {args}")
+
+    train_worker(current_rank, current_world_size, args)
 
 
-# torchrun --nproc_per_node 6 train_transcoder.py --model_name gemma-2-2b
+# torchrun --nproc_per_node gpu -m scripts/train_transcoder.py --model_name gemma-2-2b --distribute_modules --batch_size 1 --layer_stride 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
 if __name__ == "__main__":
     main()
