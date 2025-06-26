@@ -13,7 +13,7 @@ from typing import List, Dict, Tuple, Optional, Literal
 # --- Import from sparsify ---
 from sparsify import TranscoderConfig, Trainer, TrainConfig
 from sparsify.data import chunk_and_tokenize
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from datasets import load_dataset
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -129,9 +129,15 @@ def train_worker(rank, world_size, model_name):
     # Load model and tokenizer once per process
     # Explicitly move model to the correct device for this process
     repo_name = get_repo_name(model_name=model_name)
+    nf4_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+    )
     model = AutoModelForCausalLM.from_pretrained(
         repo_name,
-        torch_dtype=torch.bfloat16, # Or whatever dtype you chose in config
+        torch_dtype=torch.bfloat16,
     ).to(device) # Move model to specific device here
 
     tokenizer = AutoTokenizer.from_pretrained(repo_name)
