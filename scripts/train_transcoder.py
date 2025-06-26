@@ -129,12 +129,13 @@ def train_worker(rank, world_size, model_name):
 
     # Load model and tokenizer once per process
     # Explicitly move model to the correct device for this process
+    repo_name = get_repo_name(model_name=model_name)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name,
+        repo_name,
         torch_dtype=torch.bfloat16, # Or whatever dtype you chose in config
     ).to(device) # Move model to specific device here
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(repo_name)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -171,6 +172,23 @@ def train_worker(rank, world_size, model_name):
     return paths # Return paths only from rank 0 is meaningful for the user
 
 # --- Argument Parsing and Main Execution ---
+
+def get_repo_name(model_name: str) -> str:
+    """Maps string argument to replacement model version"""
+    supported_models = {
+        "gemma-2-2b": "google/gemma-2-2b",
+        "gemma-2-2b-it":  "google/gemma-2-2b-it",
+        "gemma-2-9b" : "google/gemma-2-9b",
+        "gemma-2-9b-it" : "google/gemma-2-9b-it",
+        "gemma-2-27b" : "google/gemma-2-27b",
+        "gemma-2-27b" : "google/gemma-2-27b-it",
+        "shieldgemma-2b": "google/shieldgemma-2b",
+        "shieldgemma-9b": "google/shieldgemma-9b",
+        "gpt-2": "openai-community/gpt2",
+    }
+    if model_name not in supported_models:
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
+    return supported_models[model_name]
 
 def get_n_layers(model_name: str) -> int:
     supported_models = {
