@@ -140,6 +140,7 @@ def train_worker(rank, world_size, args):
         paths = []
 
         if args.load_in_8bit:
+            dtype = torch.float16
             # For 8-bit loading, BitsAndBytesConfig will handle the compute_dtype
             nf8_config = BitsAndBytesConfig(
                 load_in_8bit=True,
@@ -284,6 +285,6 @@ def main():
     train_worker(current_rank, current_world_size, args)
 
 
-# torchrun --nproc_per_node gpu -m scripts/train_transcoder.py --model_name gemma-2-2b --distribute_modules --batch_size 1 --layer_stride 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
+# torchrun --nproc_per_node gpu -m scripts.train_transcoder --model_name gemma-2-2b --distribute_modules --batch_size 1 --layer_stride 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
 if __name__ == "__main__":
     main()
