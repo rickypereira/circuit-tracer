@@ -77,7 +77,7 @@ def create_training_configs_sparsify(
     )
 
     # 2. Generate the list of hookpoints based on n_layers
-    hookpoints = [f"blocks.{layer}.ln2.hook_normalized" for layer in range(n_layers)]
+    # hookpoints = [f"blocks.{layer}.ln2.hook_normalized" for layer in range(n_layers)]
     layers = list(range(n_layers)) # Also include layers if you want to specify them explicitly
 
     # 3. Create the TrainConfig
@@ -89,7 +89,6 @@ def create_training_configs_sparsify(
         log_to_wandb=log_to_wandb,
         save_dir=str(checkpoint_dir),
         init_seeds=[seed],
-        hookpoints=hookpoints,
         layers=layers,
         save_every=save_every,
         loss_fn=loss_fn,
