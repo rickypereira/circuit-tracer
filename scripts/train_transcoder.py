@@ -137,7 +137,7 @@ def train_worker(rank, world_size, model_name):
     )
     model = AutoModelForCausalLM.from_pretrained(
         repo_name,
-        torch_dtype=torch.bfloat16,
+        quantization_config=nf4_config,
     ).to(device) # Move model to specific device here
 
     tokenizer = AutoTokenizer.from_pretrained(repo_name)
