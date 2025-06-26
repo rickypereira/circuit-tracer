@@ -122,7 +122,9 @@ def train_worker(rank, world_size, model_name):
     sparsify_cfg = create_training_configs_sparsify(
         n_layers=n_layers,
         checkpoint_dir=checkpoint_dir,
+        train_batch_size=4,
         lr = 0.0004,
+        grad_acc_steps=512,
         )
     paths = []
 
