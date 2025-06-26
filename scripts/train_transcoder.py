@@ -8,7 +8,7 @@ import os
 import sys
 import numpy as np
 from pathlib import Path
-from typing import List, Dict, Tuple, Optional, Any
+from typing import List, Dict, Tuple, Optional, Literal
 
 # --- Import from sparsify ---
 from sparsify import TranscoderConfig, Trainer, TrainConfig
@@ -57,34 +57,51 @@ def cleanup():
 
 # --- Training ---
 def create_training_configs_sparsify(
-        n_layers, checkpoint_path,
+        n_layers, checkpoint_dir,
         expansion_factor=32, lr=0.0004,
         train_batch_size = 2048,
         lr_warm_up_steps=5000,
-        total_training_tokens = 1_000_000 * 60,
         seed=42,
-        dtype=torch.float16
+        log_to_wandb=False,
+        save_every = 1000,
+        loss_fn: Literal["ce", "fvu", "kl"] = "fvu",
+        optimizer: Literal["adam", "muon", "signum"] = "signum",
+        grad_acc_steps: int = 1,
+        micro_acc_steps: int = 1,
+        run_name: Optional[str] = None,
+        wandb_log_frequency: int = 1
         ) -> Dict[int, TrainConfig]:
-    layer_to_config = {}
-    for layer in range(n_layers):
-        transcoder_cfg = TranscoderConfig(
-            expansion_factor = expansion_factor,
-        )
+    # 1. Create the SparseCoderConfig (TranscoderConfig)
+    transcoder_sae_cfg = TranscoderConfig(
+        expansion_factor=expansion_factor,
+    )
 
-        cfg = TrainConfig(
-            transcoder_cfg,  # Pass the transcoder_cfg here
-            batch_size = train_batch_size,
-            lr = lr,
-            lr_warmup_steps = lr_warm_up_steps,
-            total_training_tokens = total_training_tokens,
-            log_to_wandb = False,
-            checkpoint_dir = str(checkpoint_path),
-            save_interval = total_training_tokens // (1_000_000 * 20),
-            seed = seed,
-            dtype = dtype,
-        )
-        layer_to_config[layer] = cfg
-    return layer_to_config
+    # 2. Generate the list of hookpoints based on n_layers
+    hookpoints = [f"blocks.{layer}.ln2.hook_normalized" for layer in range(n_layers)]
+    layers = list(range(n_layers)) # Also include layers if you want to specify them explicitly
+
+    # 3. Create the TrainConfig
+    cfg = TrainConfig(
+        sae=transcoder_sae_cfg, # Pass the transcoder_sae_cfg to the 'sae' field
+        batch_size=train_batch_size,
+        lr=lr,
+        lr_warmup_steps=lr_warm_up_steps,
+        log_to_wandb=log_to_wandb,
+        save_dir=str(checkpoint_dir),
+        init_seeds=[seed],
+        hookpoints=hookpoints,
+        layers=layers,
+        save_every=save_every,
+        loss_fn=loss_fn,
+        optimizer=optimizer,
+        grad_acc_steps=grad_acc_steps,
+        micro_acc_steps=micro_acc_steps,
+        run_name=run_name,
+        wandb_log_frequency=wandb_log_frequency,
+        # Other parameters from TrainConfig can be set here or left as defaults
+    )
+
+    return cfg
 
 
 def train_worker(rank, world_size, model_name):
