@@ -120,7 +120,7 @@ def train_worker(rank, world_size, model_name):
 
 
     n_layers = get_n_layers(model_name)
-    layer_to_configs = create_training_configs_sparsify(
+    sparsify_cfg = create_training_configs_sparsify(
         n_layers=n_layers,
         checkpoint_dir=checkpoint_dir,
         lr = 0.0004,
@@ -145,28 +145,22 @@ def train_worker(rank, world_size, model_name):
     dataset = load_dataset("EleutherAI/SmolLM2-135M-10B", split="train")
     tokenized_dataset = chunk_and_tokenize(dataset, tokenizer)
 
-    for layer, cfg in layer_to_configs.items():
-        if rank == 0:
-            print(f"About to start training for layer {layer} with lr {cfg.lr}")
-            print(f"Checkpoint path: {cfg.checkpoint_dir}")
+    # Sparsify's Trainer manages the SAE creation and training
+    # It's expected to handle DDP internally when run via torchrun
+    trainer = Trainer(
+        sparsify_cfg,
+        tokenized_dataset,
+        model,
+        # No need to pass rank/world_size explicitly to Trainer here,
+        # as it will infer them from the torch.distributed environment.
+    )
 
-        # Sparsify's Trainer manages the SAE creation and training
-        # It's expected to handle DDP internally when run via torchrun
-        trainer = Trainer(
-            cfg,
-            tokenized_dataset,
-            model,
-            # No need to pass rank/world_size explicitly to Trainer here,
-            # as it will infer them from the torch.distributed environment.
-        )
+    trainer.fit()
 
-        trainer.fit()
-
-        # Save SAE to checkpoints folder on the main process
-        if rank == 0:
-            final_sae_path = checkpoint_dir / f"final_sae_layer_{layer}.pt"
-            trainer.save_model(final_sae_path)
-            paths.append(str(final_sae_path))
+    # Save SAE to checkpoints folder on the main process
+    final_sae_path = checkpoint_dir / f"final_sae_layer.pt"
+    trainer.save_model(final_sae_path)
+    paths.append(str(final_sae_path))
 
     cleanup() # Call cleanup at the end of the worker
     return paths # Return paths only from rank 0 is meaningful for the user
