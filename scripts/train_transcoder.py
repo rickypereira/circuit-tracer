@@ -110,10 +110,10 @@ def train_worker(rank, world_size, model_name):
     device = f"cuda:{rank}"
     torch.cuda.set_device(device) # Ensure this process uses the correct GPU
 
-    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
+    checkpoint_dir = DEFAULT_PROJECT_PATH / "output" / model_name
     # Only create dir on main process to avoid race conditions if multiple processes try to create it
     if rank == 0:
-        checkpoint_path.mkdir(parents=True, exist_ok=True)
+        checkpoint_dir.mkdir(parents=True, exist_ok=True)
     # Ensure all processes wait for directory creation
     if world_size > 1:
         dist.barrier()
@@ -122,7 +122,7 @@ def train_worker(rank, world_size, model_name):
     n_layers = get_n_layers(model_name)
     layer_to_configs = create_training_configs_sparsify(
         n_layers=n_layers,
-        checkpoint_path=checkpoint_path,
+        checkpoint_dir=checkpoint_dir,
         lr = 0.0004,
         )
     paths = []
@@ -163,7 +163,7 @@ def train_worker(rank, world_size, model_name):
 
         # Save SAE to checkpoints folder on the main process
         if rank == 0:
-            final_sae_path = checkpoint_path / f"final_sae_layer_{layer}.pt"
+            final_sae_path = checkpoint_dir / f"final_sae_layer_{layer}.pt"
             trainer.save_model(final_sae_path)
             paths.append(str(final_sae_path))
 
