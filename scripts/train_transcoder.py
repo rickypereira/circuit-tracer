@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any
 
 # --- Import from sparsify ---
-from sparsify import SaeConfig, Trainer, TrainConfig
+from sparsify import TranscoderConfig, Trainer, TrainConfig
 from sparsify.data import chunk_and_tokenize
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from datasets import load_dataset
@@ -67,14 +67,12 @@ def create_training_configs_sparsify(
         ) -> Dict[int, TrainConfig]:
     layer_to_config = {}
     for layer in range(n_layers):
-        sae_cfg = SaeConfig(
-            hook_point = f"blocks.{layer}.ln2.hook_normalized",
-            hook_point_out = f"blocks.{layer}.hook_mlp_out",
+        transcoder_cfg = TranscoderConfig(
             expansion_factor = expansion_factor,
         )
 
         cfg = TrainConfig(
-            sae_cfg,
+            transcoder_cfg,  # Pass the transcoder_cfg here
             batch_size = train_batch_size,
             lr = lr,
             lr_warmup_steps = lr_warm_up_steps,
