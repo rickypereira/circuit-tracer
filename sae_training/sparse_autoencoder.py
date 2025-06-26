@@ -15,7 +15,7 @@ from torch import Tensor, nn
 from torch.distributions.categorical import Categorical
 from tqdm import tqdm
 from transformer_lens.hook_points import HookedRootModule, HookPoint
-import torch.distributed as dist # DDP Change: Import dist
+import torch.distributed as dist
 
 from .geom_median.src.geom_median.torch import compute_geometric_median
 

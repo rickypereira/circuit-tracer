@@ -1,23 +1,7 @@
-# Transcoder training sample code for DDP
-
-"""
-This sample script can be used to train a transcoder on a model of your choice
-using DistributedDataParallel (DDP) for multi-GPU training.
-This code, along with the transcoder training code more generally, was largely
-    adapted from an older version of Joseph Bloom's SAE training repo, the latest
-    version of which can be found at https://github.com/jbloomAus/SAELens.
-Most of the parameters given here are the same as the SAE training parameters
-    listed at https://jbloomaus.github.io/SAELens/training_saes/.
-Transcoder-specific parameters are marked as such in comments.
-
-"""
-
 import logging
 import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
-from torch.nn.parallel import DistributedDataParallel as DDP
-from torch.utils.data.distributed import DistributedSampler
 from huggingface_hub import HfApi
 import argparse
 import os
@@ -25,12 +9,12 @@ import sys
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Any
-from sae_training.config import LanguageModelSAERunnerConfig
-from sae_training.utils import LMSparseAutoencoderSessionloader
-from sae_training.train_sae_on_language_model import train_sae_on_language_model
-from sae_training.config import LanguageModelSAERunnerConfig
-from sae_training.utils import LMSparseAutoencoderSessionloader
-from sae_training.train_sae_on_language_model import train_sae_on_language_model
+
+# --- Import from sparsify ---
+from sparsify import SaeConfig, Trainer, TrainConfig
+from sparsify.data import chunk_and_tokenize
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from datasets import load_dataset
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -39,7 +23,6 @@ DEFAULT_PROJECT_PATH=Path(f"/app").resolve()
 # --- Helper Functions ---
 def setup_environment():
     print("Ensuring environment is set up...")
-    # ... (circuit_tracer check) ...
     hf_token = os.getenv("HF_TOKEN")
     if not hf_token:
         print("Hugging Face token not found.")
@@ -48,7 +31,6 @@ def setup_environment():
     if hf_token:
         print("Hugging Face token found in environment variables.")
         try:
-            # This call will use the token from the env var automatically
             HfApi().whoami()
             print("Successfully authenticated with Hugging Face Hub.")
         except Exception as e:
@@ -62,159 +44,122 @@ def setup_environment():
 
 def setup(rank, world_size):
     """Initializes the distributed process group."""
-    os.environ['MASTER_ADDR'] = 'localhost'
-    os.environ['MASTER_PORT'] = '12355'
+    # These environment variables are usually set by torchrun/torch.distributed.launch
+    # but good to have as fallbacks or for local testing.
+    os.environ['MASTER_ADDR'] = os.getenv('MASTER_ADDR', 'localhost')
+    os.environ['MASTER_PORT'] = os.getenv('MASTER_PORT', '12355')
     dist.init_process_group("nccl", rank=rank, world_size=world_size)
 
 def cleanup():
     """Cleans up the distributed process group."""
-    dist.destroy_process_group()
+    if dist.is_initialized(): # Only destroy if initialized
+        dist.destroy_process_group()
 
 # --- Training ---
-def create_training_configs(
-        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=2304, d_out=2304,
-        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean',
-        dataset_path="Skylion007/openwebtext", train_batch_size = 2048,
-        context_size = 32, lr_warm_up_steps=5000, n_batches_in_buffer = 32,
-        total_training_tokens = 1_000_000 * 60, store_batch_size = 8,
-        use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
-        resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
-        seed=42, dtype=torch.float16, rank=0, world_size=1) -> Dict[int, LanguageModelSAERunnerConfig]:
+def create_training_configs_sparsify(
+        n_layers, checkpoint_path,
+        expansion_factor=32, lr=0.0004,
+        train_batch_size = 2048,
+        lr_warm_up_steps=5000,
+        total_training_tokens = 1_000_000 * 60,
+        seed=42,
+        dtype=torch.float16
+        ) -> Dict[int, TrainConfig]:
     layer_to_config = {}
     for layer in range(n_layers):
-        cfg = LanguageModelSAERunnerConfig(
+        sae_cfg = SaeConfig(
             hook_point = f"blocks.{layer}.ln2.hook_normalized",
-            hook_point_layer = layer,
-            d_in = d_in,
-            dataset_path = dataset_path,
-            is_dataset_tokenized=False,
-            model_name=model_name,
-            is_transcoder = True,
-            out_hook_point = f"blocks.{layer}.hook_mlp_out",
-            out_hook_point_layer = layer,
-            d_out = d_out,
-            # SAE Parameters
+            hook_point_out = f"blocks.{layer}.hook_mlp_out",
             expansion_factor = expansion_factor,
-            b_dec_init_method = b_dec_init_method,
+        )
 
-            # Training Parameters
+        cfg = TrainConfig(
+            sae_cfg,
+            batch_size = train_batch_size,
             lr = lr,
-            l1_coefficient = l1_coefficient,
-            lr_scheduler_name="constantwithwarmup",
-            train_batch_size = train_batch_size,
-            context_size = context_size,
-            lr_warm_up_steps=lr_warm_up_steps,
-
-            # Activation Store Parameters
-            n_batches_in_buffer = n_batches_in_buffer,
+            lr_warmup_steps = lr_warm_up_steps,
             total_training_tokens = total_training_tokens,
-            store_batch_size = store_batch_size,
-
-            # Dead Neurons and Sparsity
-            use_ghost_grads=use_ghost_grads,
-            feature_sampling_method = feature_sampling_method,
-            feature_sampling_window = feature_sampling_window,
-            resample_batches=resample_batches,
-            dead_feature_window=dead_feature_window,
-            dead_feature_threshold = dead_feature_threshold,
-
-            # WANDB
             log_to_wandb = False,
-
-            # Misc
-            use_tqdm = True,
-            device = f"cuda:{rank}",
+            checkpoint_dir = str(checkpoint_path),
+            save_interval = total_training_tokens // (1_000_000 * 20),
             seed = seed,
-            n_checkpoints = n_checkpoints,
-            checkpoint_path = checkpoint_path,
             dtype = dtype,
-
-            # DDP
-            rank=rank,
-            world_size=world_size
         )
         layer_to_config[layer] = cfg
     return layer_to_config
 
 
 def train_worker(rank, world_size, model_name):
-    """The worker function for DDP training."""
+    """The worker function for training using sparsify with torchrun."""
     setup(rank, world_size)
+    device = f"cuda:{rank}"
+    torch.cuda.set_device(device) # Ensure this process uses the correct GPU
 
     checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
+    # Only create dir on main process to avoid race conditions if multiple processes try to create it
+    if rank == 0:
+        checkpoint_path.mkdir(parents=True, exist_ok=True)
+    # Ensure all processes wait for directory creation
+    if world_size > 1:
+        dist.barrier()
+
+
     n_layers = get_n_layers(model_name)
-    layer_to_configs = create_training_configs(
-        model_name=model_name,
+    layer_to_configs = create_training_configs_sparsify(
         n_layers=n_layers,
         checkpoint_path=checkpoint_path,
-        lr = 0.0004, l1_coefficient = 0.00014,
-        rank=rank,
-        world_size=world_size
+        lr = 0.0004,
         )
     paths = []
-    for _, cfg in layer_to_configs.items():
+
+    # Load model and tokenizer once per process
+    # Explicitly move model to the correct device for this process
+    model = AutoModelForCausalLM.from_pretrained(
+        model_name,
+        torch_dtype=torch.bfloat16, # Or whatever dtype you chose in config
+    ).to(device) # Move model to specific device here
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+
+    # Load and tokenize the dataset once per process
+    # Sparsify's Trainer, when launched with torchrun, should handle distributed data loading
+    # (e.g., through DistributedSampler implicitly or by shard logic)
+    dataset = load_dataset("EleutherAI/SmolLM2-135M-10B", split="train")
+    tokenized_dataset = chunk_and_tokenize(dataset, tokenizer)
+
+    for layer, cfg in layer_to_configs.items():
         if rank == 0:
-            print(f"About to start training with lr {cfg.lr} and l1 {cfg.l1_coefficient}")
-            print(f"Checkpoint path: {cfg.checkpoint_path}")
+            print(f"About to start training for layer {layer} with lr {cfg.lr}")
+            print(f"Checkpoint path: {cfg.checkpoint_dir}")
 
-        loader = LMSparseAutoencoderSessionloader(cfg)
-
-        print(f"RANK {rank}: ABOUT TO CALL THE NEW load_session with correct arguments.")
-
-        model, sparse_autoencoder, activations_loader = loader.load_session(
-            rank=rank,
-            world_size=world_size
+        # Sparsify's Trainer manages the SAE creation and training
+        # It's expected to handle DDP internally when run via torchrun
+        trainer = Trainer(
+            cfg,
+            tokenized_dataset,
+            model,
+            # No need to pass rank/world_size explicitly to Trainer here,
+            # as it will infer them from the torch.distributed environment.
         )
 
-        # Move models to the correct device
-        model.to(rank)
-        sparse_autoencoder.to(rank)
+        trainer.fit()
 
-        # Wrap models with DDP
-        model = DDP(model, device_ids=[rank])
-        sparse_autoencoder = DDP(sparse_autoencoder, device_ids=[rank])
-
-        # It's crucial to adapt the activations_loader for distributed training.
-        # This usually involves using a DistributedSampler.
-        # The implementation details depend on the 'sae-training' library.
-        # Assuming the activations_loader has a dataloader attribute,
-        # you would do something like this:
-        #
-        # train_sampler = DistributedSampler(activations_loader.dataset, num_replicas=world_size, rank=rank)
-        # activations_loader.dataloader.sampler = train_sampler
-        #
-        # Since the internal structure of activations_loader is not fully known,
-        # this part may need adjustment based on the library's specifics.
-
-        # train SAE
-        sparse_autoencoder = train_sae_on_language_model(
-            rank, world_size, model, sparse_autoencoder, activations_loader,
-            n_checkpoints=cfg.n_checkpoints,
-            batch_size = cfg.train_batch_size,
-            feature_sampling_method = cfg.feature_sampling_method,
-            feature_sampling_window = cfg.feature_sampling_window,
-            feature_reinit_scale = cfg.feature_reinit_scale,
-            dead_feature_threshold = cfg.dead_feature_threshold,
-            dead_feature_window=cfg.dead_feature_window,
-            use_wandb = cfg.log_to_wandb,
-            wandb_log_frequency = cfg.wandb_log_frequency
-        )
-
-        # save sae to checkpoints folder on the main process
+        # Save SAE to checkpoints folder on the main process
         if rank == 0:
-            # When saving, unwrap the model from DDP
-            path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.module.get_name()}.pt"
-            sparse_autoencoder.module.save_model(path)
-            paths.append(path)
+            final_sae_path = checkpoint_path / f"final_sae_layer_{layer}.pt"
+            trainer.save_model(final_sae_path)
+            paths.append(str(final_sae_path))
 
-    cleanup()
-    return paths
+    cleanup() # Call cleanup at the end of the worker
+    return paths # Return paths only from rank 0 is meaningful for the user
 
 # --- Argument Parsing and Main Execution ---
 
 def get_n_layers(model_name: str) -> int:
     supported_models = {
-        "gemma-2-2b" : 25, # d_in=2304
+        "gemma-2-2b" : 25,
         "gemma-2-2b-it" : 25,
         "gemma-2-9b" : 41,
         "gemma-2-9b-it" : 41,
@@ -231,15 +176,17 @@ def get_n_layers(model_name: str) -> int:
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
     parser = argparse.ArgumentParser(description="Train Transcoders with DDP.")
-    # Model Arguments
     parser.add_argument(
         "--model_name", type=str, default='gemma-2-2b',
         choices=['gemma-2-2b', "gemma-2-2b-it", "gemma-2-9b", "gemma-2-9b-it",  "gemma-2-27b", "gemma-2-27b-it", "shieldgemma-2b", "shieldgemma-9b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
+    # The --world_size argument is usually provided by torchrun as --nproc_per_node,
+    # and then read from the environment by torch.distributed.
+    # We keep it as a placeholder if you wanted to test with mp.spawn directly.
     parser.add_argument(
-        "--world_size", type=int, default=6,
-        help="Number of GPUs to use for training."
+        "--world_size", type=int, default=1, # Default to 1 for local testing without torchrun
+        help="Number of GPUs to use for training. (Set by torchrun via env vars)."
     )
     args = parser.parse_args()
     return args
@@ -250,13 +197,19 @@ def main():
     setup_environment()
 
     args = parse_arguments()
-    print(f"Training model {args.model_name} on {args.world_size} GPUs.")
+    print(f"Training model {args.model_name} on {args.world_size} GPUs (if launched with torchrun).")
 
-    mp.spawn(train_worker,
-             args=(args.world_size, args.model_name),
-             nprocs=args.world_size,
-             join=True)
+    # When using torchrun, it sets up the environment variables (LOCAL_RANK, RANK, WORLD_SIZE, MASTER_ADDR, MASTER_PORT)
+    # and then executes your script. You don't call mp.spawn yourself within the script.
+    # The 'rank' and 'world_size' will be available from the environment.
+    current_rank = int(os.environ.get("RANK", 0))
+    current_world_size = int(os.environ.get("WORLD_SIZE", 1))
+
+    # The train_worker function will be called directly by torchrun for each process.
+    # If not launched with torchrun, it will run as a single process (rank 0, world_size 1).
+    train_worker(current_rank, current_world_size, args.model_name)
 
 
+# torchrun --nproc_per_node 6 train_transcoder.py --model_name gemma-2-2b
 if __name__ == "__main__":
     main()

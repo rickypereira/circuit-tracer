@@ -1,6 +1,6 @@
 import os
 import torch
-import torch.distributed as dist  # Make sure dist is imported
+import torch.distributed as dist
 from datasets import load_dataset
 from torch.utils.data import DataLoader
 from tqdm import tqdm
@@ -40,7 +40,6 @@ class ActivationsStore:
 
         # Broadcast the tokenization status
         if self.world_size > 1:
-            # FIX: Use the reliable model_device, not cfg.device
             is_tokenized_tensor = torch.tensor(int(self.cfg.is_dataset_tokenized), device=self.model_device)
             dist.broadcast(is_tokenized_tensor, src=0)
             self.cfg.is_dataset_tokenized = bool(is_tokenized_tensor.item())
