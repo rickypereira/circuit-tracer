@@ -18,7 +18,7 @@ from datasets import load_dataset
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-DEFAULT_PROJECT_PATH=Path(f"/app").resolve()
+DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 
 # --- Helper Functions ---
 def setup_environment():
