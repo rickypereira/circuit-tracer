@@ -16,11 +16,12 @@ from datetime import timedelta
 from sparsify import TranscoderConfig, Trainer, TrainConfig
 from sparsify.data import chunk_and_tokenize
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from datasets import load_dataset, Dataset # Import Dataset for type hinting
+from datasets import load_dataset
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
+DEFAULT_WANDB_PROJECT = 'cloud-ai-research-experimental-runs'
 
 # --- Helper Functions ---
 def setup_environment():
@@ -74,15 +75,11 @@ def create_training_configs_sparsify(
         # New parameters from command line
         k: Optional[int] = None,
         layer_stride: Optional[int] = None,
-        ctx_len: int = 2048, # Context length is often part of data processing
         distribute_modules: bool = False,
-        load_in_8bit: bool = False, # Handled during model loading
         ) -> TrainConfig:
     transcoder_sae_cfg = TranscoderConfig(
         expansion_factor=expansion_factor,
-        # If 'k' relates to sparsity or top-k, it might go here
-        # Assuming 'k' might be a parameter for TranscoderConfig if it controls sparsity
-        k=k if k is not None else 0 # Defaulting k to 0 if not provided
+        k=k if k is not None else 0
     )
 
     layers = list(range(n_layers))
@@ -118,6 +115,11 @@ def train_worker(rank, world_size, args):
         device = f"cuda:{rank}"
         torch.cuda.set_device(device)
 
+        dataset_path = get_dataset_path(name=args.dataset_path)
+        if dataset_path == '':
+            print("Dataset Path is not supported")
+            sys.exit(1)
+
         checkpoint_dir = DEFAULT_PROJECT_PATH / "output" / args.model_name
         if rank == 0:
             checkpoint_dir.mkdir(parents=True, exist_ok=True)
@@ -130,12 +132,13 @@ def train_worker(rank, world_size, args):
             n_layers=n_layers,
             checkpoint_dir=checkpoint_dir,
             train_batch_size=args.batch_size,
-            lr = 0.0004, # Or make this an argument as well
+            lr = 0.0004,
+            log_to_wandb=args.log_to_wandb,
             grad_acc_steps=args.grad_acc_steps,
             micro_acc_steps=args.micro_acc_steps,
             k=args.k,
             layer_stride=args.layer_stride,
-            ctx_len=args.ctx_len, # Pass ctx_len to the config if needed by sparsify
+            ctx_len=args.ctx_len,
         )
         paths = []
 
@@ -172,7 +175,7 @@ def train_worker(rank, world_size, args):
             tokenizer.pad_token = tokenizer.eos_token
 
         # Load and tokenize the dataset once per process
-        dataset = load_dataset("EleutherAI/SmolLM2-135M-10B", split="train")
+        dataset = load_dataset(dataset_path, split="train")
         tokenized_dataset = chunk_and_tokenize(dataset, tokenizer, max_seq_len=args.ctx_len)
 
         trainer = Trainer(
@@ -210,6 +213,14 @@ def get_repo_name(model_name: str) -> str:
         raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
     return supported_models[model_name]
 
+def get_dataset_path(name: str) -> str:
+    """Maps argument name to downloadable dataset name."""
+    supported_datasets = {
+        "openwebtext": "Skylion007/openwebtext",
+        "smol": "EleutherAI/SmolLM2-135M-10B",
+    }
+    return supported_datasets.get(name.lower(), '')
+
 def get_n_layers(model_name: str) -> int:
     supported_models = {
         "gemma-2-2b" : 25,
@@ -233,6 +244,11 @@ def parse_arguments() -> argparse.Namespace:
         "--model_name", type=str, default='gemma-2-2b',
         choices=['gemma-2-2b', "gemma-2-2b-it", "gemma-2-9b", "gemma-2-9b-it",  "gemma-2-27b", "gemma-2-27b-it", "shieldgemma-2b", "shieldgemma-9b", "gpt2"],
         help="Model Name identifier (e.g., gemma-2-2b)."
+    )
+    parser.add_argument(
+        "--dataset_path", type=str, default='openwebtext',
+        choices=['openwebtext', "smol"],
+        help="The Dataset Path."
     )
     # Add new arguments
     parser.add_argument(
@@ -266,6 +282,10 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--micro_acc_steps", type=int, default=1,
         help="Number of micro accumulation steps."
+    )
+    parser.add_argument(
+        "--log_to_wandb", action="store_true",
+        help="Log to Weights & Biases."
     )
     args = parser.parse_args()
     return args
