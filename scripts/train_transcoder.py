@@ -120,7 +120,8 @@ def create_training_configs_sparsify(
 
     if layers_partition_size is not None and layers_partition_size > 0:
         layer_partitions = partition_layers(layers_partition_size, all_layers)
-        
+        print(f"Building TrainConfig for Layers: {layer_partitions}")
+
         for i, layers_for_config in enumerate(layer_partitions):
             cfg = TrainConfig(
                 sae=transcoder_sae_cfg,
@@ -238,12 +239,14 @@ def train_worker(rank, world_size, args):
         tokenized_dataset = chunk_and_tokenize(dataset, tokenizer, max_seq_len=args.ctx_len)
 
         for sparsify_cfg in sparsify_cfgs:
+            print(sparsify_cfg)
             trainer = Trainer(
                 sparsify_cfg,
                 tokenized_dataset,
                 model,
             )
             trainer.fit()
+            print(f"DONE TRAINING {sparsify_cfg.layers}")
         cleanup()
 
 # --- Argument Parsing and Main Execution ---
