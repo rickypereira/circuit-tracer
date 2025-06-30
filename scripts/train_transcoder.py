@@ -178,6 +178,10 @@ def train_worker(rank, world_size, args):
 
         # Load and tokenize the dataset once per process
         dataset = load_dataset(dataset_path, split="train")
+        if args.dataset_train_size:
+            print(f"Loading Dataset Train of Size {args.dataset_train_size}")
+            dataset = dataset.select(range(args.dataset_train_size))
+
         tokenized_dataset = chunk_and_tokenize(dataset, tokenizer, max_seq_len=args.ctx_len)
 
         trainer = Trainer(
@@ -288,6 +292,10 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--log_to_wandb", action="store_true",
         help="Log to Weights & Biases."
+    )
+    parser.add_argument(
+        "--dataset_train_size", type=int, default=None,
+        help="Optional. The size of the dataset to be trained on."
     )
     args = parser.parse_args()
     return args
