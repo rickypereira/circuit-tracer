@@ -192,11 +192,6 @@ def train_worker(rank, world_size, args):
 
         trainer.fit()
 
-        if rank == 0:
-            final_sae_path = checkpoint_dir / f"final_sae_layer.pt"
-            trainer.save_model(final_sae_path)
-            paths.append(str(final_sae_path))
-
         cleanup()
         return paths
 
