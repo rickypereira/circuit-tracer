@@ -75,7 +75,9 @@ def create_training_configs_sparsify(
         # New parameters from command line
         k: Optional[int] = None,
         layer_stride: Optional[int] = None,
+        ctx_len: int = 2048,
         distribute_modules: bool = False,
+        load_in_8bit: bool = False,
         ) -> TrainConfig:
     transcoder_sae_cfg = TranscoderConfig(
         expansion_factor=expansion_factor,
