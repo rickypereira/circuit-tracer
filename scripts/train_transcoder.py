@@ -1,4 +1,5 @@
 import logging
+import math
 import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
@@ -58,6 +59,36 @@ def cleanup():
         dist.destroy_process_group()
 
 # --- Training ---
+def partition_layers(layers_partition_size: int, all_layers: List[int]) -> List[List[int]]:
+    """
+    Partitions a list of layers into a specified number of sub-lists.
+
+    Args:
+        layers_partition_size (int): The number of partitions to create.
+        all_layers (List[int]): The complete list of layers to be partitioned.
+
+    Returns:
+        List[List[int]]: A list of lists, where each inner list represents a partition of layers.
+    """
+    n_layers = len(all_layers)
+    if layers_partition_size <= 0:
+        return [all_layers]
+
+    if layers_partition_size > n_layers:
+        print(f"Warning: layers_partition_size ({layers_partition_size}) is greater than the number of layers ({n_layers}). Each layer will be in its own partition.")
+        layers_partition_size = n_layers
+
+    partition_size = math.ceil(n_layers / layers_partition_size)
+    
+    partitions = []
+    for i in range(layers_partition_size):
+        start_idx = i * partition_size
+        end_idx = min((i + 1) * partition_size, n_layers)
+        layers_for_partition = all_layers[start_idx:end_idx]
+        if layers_for_partition:
+            partitions.append(layers_for_partition)
+    return partitions
+
 def create_training_configs_sparsify(
         n_layers, checkpoint_dir,
         expansion_factor=32, lr=0.0004,
@@ -74,7 +105,7 @@ def create_training_configs_sparsify(
         wandb_log_frequency: int = 1,
         # New parameters from command line
         k: Optional[int] = None,
-        layer_stride: Optional[int] = None,
+        layers_partition_size: Optional[int] = None,
         ctx_len: int = 2048,
         distribute_modules: bool = False,
         load_in_8bit: bool = False,
@@ -84,31 +115,54 @@ def create_training_configs_sparsify(
         k=k if k is not None else 0
     )
 
-    layers = list(range(n_layers))
-    if layer_stride is not None:
-        layers = layers[::layer_stride]
+    all_layers = list(range(n_layers))
+    training_configs = []
 
-
-    cfg = TrainConfig(
-        sae=transcoder_sae_cfg,
-        batch_size=train_batch_size,
-        lr=lr,
-        lr_warmup_steps=lr_warm_up_steps,
-        log_to_wandb=log_to_wandb,
-        save_dir=str(checkpoint_dir),
-        init_seeds=[seed],
-        layers=layers,
-        save_every=save_every,
-        loss_fn=loss_fn,
-        optimizer=optimizer,
-        grad_acc_steps=grad_acc_steps,
-        micro_acc_steps=micro_acc_steps,
-        run_name=run_name,
-        wandb_log_frequency=wandb_log_frequency,
-        distribute_modules=distribute_modules
-    )
-    return cfg
-
+    if layers_partition_size is not None and layers_partition_size > 0:
+        layer_partitions = partition_layers(layers_partition_size, all_layers)
+        
+        for i, layers_for_config in enumerate(layer_partitions):
+            cfg = TrainConfig(
+                sae=transcoder_sae_cfg,
+                batch_size=train_batch_size,
+                lr=lr,
+                lr_warmup_steps=lr_warm_up_steps,
+                log_to_wandb=log_to_wandb,
+                save_dir=str(checkpoint_dir),
+                init_seeds=[seed],
+                layers=layers_for_config,
+                save_every=save_every,
+                loss_fn=loss_fn,
+                optimizer=optimizer,
+                grad_acc_steps=grad_acc_steps,
+                micro_acc_steps=micro_acc_steps,
+                run_name=f"{run_name}_partition_{i+1}" if run_name else f"partition_{i+1}",
+                wandb_log_frequency=wandb_log_frequency,
+                distribute_modules=distribute_modules
+            )
+            training_configs.append(cfg)
+    else:
+        # Original behavior if layers_partition_size is not specified or is invalid
+        cfg = TrainConfig(
+            sae=transcoder_sae_cfg,
+            batch_size=train_batch_size,
+            lr=lr,
+            lr_warmup_steps=lr_warm_up_steps,
+            log_to_wandb=log_to_wandb,
+            save_dir=str(checkpoint_dir),
+            init_seeds=[seed],
+            layers=all_layers,
+            save_every=save_every,
+            loss_fn=loss_fn,
+            optimizer=optimizer,
+            grad_acc_steps=grad_acc_steps,
+            micro_acc_steps=micro_acc_steps,
+            run_name=run_name,
+            wandb_log_frequency=wandb_log_frequency,
+            distribute_modules=distribute_modules
+        )
+        training_configs.append(cfg)
+    return training_configs
 
 def train_worker(rank, world_size, args):
     """The worker function for training using sparsify with torchrun."""
@@ -130,7 +184,7 @@ def train_worker(rank, world_size, args):
 
 
         n_layers = get_n_layers(args.model_name)
-        sparsify_cfg = create_training_configs_sparsify(
+        sparsify_cfgs = create_training_configs_sparsify(
             n_layers=n_layers,
             checkpoint_dir=checkpoint_dir,
             train_batch_size=args.batch_size,
@@ -139,10 +193,9 @@ def train_worker(rank, world_size, args):
             grad_acc_steps=args.grad_acc_steps,
             micro_acc_steps=args.micro_acc_steps,
             k=args.k,
-            layer_stride=args.layer_stride,
+            layers_partition_size=args.layers_partition_size,
             ctx_len=args.ctx_len,
         )
-        paths = []
 
         if args.load_in_8bit:
             dtype = torch.float16
@@ -184,16 +237,14 @@ def train_worker(rank, world_size, args):
 
         tokenized_dataset = chunk_and_tokenize(dataset, tokenizer, max_seq_len=args.ctx_len)
 
-        trainer = Trainer(
-            sparsify_cfg,
-            tokenized_dataset,
-            model,
-        )
-
-        trainer.fit()
-
+        for sparsify_cfg in sparsify_cfgs:
+            trainer = Trainer(
+                sparsify_cfg,
+                tokenized_dataset,
+                model,
+            )
+            trainer.fit()
         cleanup()
-        return paths
 
 # --- Argument Parsing and Main Execution ---
 
@@ -261,8 +312,8 @@ def parse_arguments() -> argparse.Namespace:
         help="Batch size per GPU."
     )
     parser.add_argument(
-        "--layer_stride", type=int, default=1,
-        help="Stride for selecting layers (e.g., 2 means every other layer)."
+        "--layers_partition_size", type=int, default=1,
+        help="Partition size of each layer for training (e.g 2 means 2 training sessions.)"
     )
     parser.add_argument(
         "--grad_acc_steps", type=int, default=1,
@@ -310,6 +361,6 @@ def main():
     train_worker(current_rank, current_world_size, args)
 
 
-# torchrun --nproc_per_node gpu -m scripts.train_transcoder --model_name gemma-2-2b --distribute_modules --batch_size 1 --layer_stride 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
+# torchrun --nproc_per_node gpu -m scripts.train_transcoder --model_name gemma-2-2b --distribute_modules --batch_size 1 --layers_partition_size 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
 if __name__ == "__main__":
     main()
