@@ -171,6 +171,9 @@ def create_training_configs_sparsify(
 
 def train_worker(rank, world_size, args):
     """The worker function for training using sparsify with torchrun."""
+    if args.load_in_4bit and args.load_in_8bit:
+        raise ValueError("Cannot load 4-bit and 8-bit quantization")
+
     with nullcontext() if rank == 0 else redirect_stdout(None):
         setup(rank, world_size)
         device = f"cuda:{rank}"
@@ -203,13 +206,25 @@ def train_worker(rank, world_size, args):
             ctx_len=args.ctx_len,
         )
 
-        if args.load_in_8bit:
-            dtype = torch.float16
-            # For 8-bit loading, BitsAndBytesConfig will handle the compute_dtype
+        dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+        if args.load_in_4bit:
+            nf4_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=dtype,
+                bnb_4bit_use_double_quant=True,
+            )
+            model = AutoModelForCausalLM.from_pretrained(
+                get_repo_name(args.model_name),
+                quantization_config=nf4_config,
+                device_map={"": f"cuda:{rank}"},
+                torch_dtype=dtype,
+            )
+        elif args.load_in_8bit:
             nf8_config = BitsAndBytesConfig(
                 load_in_8bit=True,
                 bnb_8bit_quant_type="int8",
-                bnb_8bit_compute_dtype=torch.float16, 
+                bnb_8bit_compute_dtype=dtype, 
                 bnb_8bit_use_double_quant=True,
             )
             model = AutoModelForCausalLM.from_pretrained(
@@ -219,12 +234,6 @@ def train_worker(rank, world_size, args):
                 torch_dtype=dtype,
             )
         else:
-            # Determine dtype for model loading for non-8bit
-            if torch.cuda.is_bf16_supported():
-                dtype = torch.bfloat16
-            else:
-                dtype = torch.float16
-
             model = AutoModelForCausalLM.from_pretrained(
                 get_repo_name(args.model_name),
                 device_map={"": f"cuda:{rank}"},
@@ -338,6 +347,10 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--load_in_8bit", action="store_true",
         help="Load the model in 8-bit quantization."
+    )
+    parser.add_argument(
+        "--load_in_4bit", action="store_true",
+        help="Load the model in 4-bit quantization."
     )
     parser.add_argument(
         "--micro_acc_steps", type=int, default=1,
