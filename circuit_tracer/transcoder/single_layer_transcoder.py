@@ -150,8 +150,8 @@ def load_relu_transcoder_from_safetensors(
     param_dict = {}
     param_dict["W_enc"] = W_enc.T.contiguous()
     param_dict["W_dec"] = W_dec.contiguous()
-    param_dict["b_enc"] = b_enc.T.contiguous()
-    param_dict["b_dec"] = b_dec.T.contiguous()
+    param_dict["b_enc"] = b_enc.contiguous()
+    param_dict["b_dec"] = b_dec.contiguous()
     
     activation_function = F.relu
     with torch.device("meta"):

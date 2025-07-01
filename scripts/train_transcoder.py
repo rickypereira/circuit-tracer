@@ -119,7 +119,7 @@ def create_training_configs_sparsify(
         k=k if k is not None else 0
     )
 
-    all_layers = list(range(n_layers))
+    all_layers = list(range(n_layers + 1))
     training_configs = []
 
     if layers_partition_size is not None and layers_partition_size > 0:
