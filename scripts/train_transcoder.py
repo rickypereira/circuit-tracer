@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional, Literal
 from contextlib import nullcontext, redirect_stdout
 from datetime import timedelta
+import wandb
 
 # --- Import from sparsify ---
 from sparsify import TranscoderConfig, Trainer, TrainConfig
@@ -19,10 +20,11 @@ from sparsify.data import chunk_and_tokenize
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from datasets import load_dataset
 
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
 DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 DEFAULT_WANDB_PROJECT = 'cloud-ai-research-experimental-runs'
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["WANDB_PROJECT"] = DEFAULT_WANDB_PROJECT
 
 # --- Helper Functions ---
 def setup_environment():
@@ -45,6 +47,8 @@ def setup_environment():
         print("Hugging Face token (HF_TOKEN or HUGGING_FACE_HUB_TOKEN) not found in environment variables.")
         print("Please set HF_TOKEN environment variable when running the Docker container.")
         sys.exit(1)
+    # Reinit Wandb
+    wandb.setup(wandb.Settings(reinit=True))
 
 def setup(rank, world_size):
     """Initializes the distributed process group."""
@@ -364,6 +368,6 @@ def main():
     train_worker(current_rank, current_world_size, args)
 
 
-# torchrun --nproc_per_node gpu -m scripts.train_transcoder --model_name gemma-2-2b --distribute_modules --batch_size 1 --layers_partition_size 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2
+# torchrun --nproc_per_node gpu -m scripts.train_transcoder --model_name gemma-2-2b --distribute_modules --batch_size 1 --layers_partition_size 2 --grad_acc_steps 8 --ctx_len 2048 --k 192 --load_in_8bit --micro_acc_steps 2 --log_to_wandb --dataset_train_size 4000
 if __name__ == "__main__":
     main()
