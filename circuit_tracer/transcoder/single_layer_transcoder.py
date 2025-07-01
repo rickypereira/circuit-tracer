@@ -134,18 +134,25 @@ def load_gemma_scope_transcoder(
     transcoder.load_state_dict(param_dict, assign=True)
     return transcoder
 
-def load_local_relu_transcoder(
-        path: str,
+def load_relu_transcoder_from_safetensors(
+        safetensors: str,
         layer: int,
         device: torch.device = torch.device("cuda"),
-          dtype: Optional[torch.dtype] = torch.float32,
+        dtype: Optional[torch.dtype] = torch.float32,
     ):
-    state_dict = torch.load(path, weights_only=False)
-    param_dict = state_dict['state_dict']
-    W_enc = param_dict["W_enc"]
+    state_dict = load_file(safetensors, device=device.type)
+    W_enc = state_dict['encoder.weight']
+    W_dec = state_dict['W_dec']
+    b_enc = state_dict['encoder.bias']
+    b_dec = state_dict['b_dec']
     d_sae, d_model = W_enc.shape
-    param_dict["W_enc"] = param_dict["W_enc"].T.contiguous()
-    param_dict["W_dec"] = param_dict["W_dec"].T.contiguous()
+
+    param_dict = {}
+    param_dict["W_enc"] = W_enc.T.contiguous()
+    param_dict["W_dec"] = W_dec.T.contiguous()
+    param_dict["b_enc"] = b_enc.T.contiguous()
+    param_dict["b_dec"] = b_dec.T.contiguous()
+    
     activation_function = F.relu
     with torch.device("meta"):
         transcoder = SingleLayerTranscoder(
@@ -190,18 +197,20 @@ TranscoderSettings = namedtuple(
 )
 
 
-def load_local_transcoder_set(transcoder_config_files: List[str],
-                              layer_scan_format: str,
-                              device: Optional[torch.device] = torch.device("cuda"),
-                              dtype: Optional[torch.dtype] = torch.float32,
-                              ) -> TranscoderSettings:
-    feature_input_hook = 'ln2.hook_normalized'
-    feature_output_hook = 'hook_mlp_out'
+def load_transcoder_set_from_safetensors(model_name: str,
+                                         layers_safetensors: List[str],
+                                         device: Optional[torch.device] = torch.device("cuda"),
+                                         dtype: Optional[torch.dtype] = torch.float32,
+                                         ) -> TranscoderSettings:
+
+    feature_input_hook = "hook_resid_mid"
+    feature_output_hook = 'mlp.hook_out'
     transcoders = {}
-    for layer, transcoder_config_file in enumerate(transcoder_config_files):
-        transcoder = load_relu_transcoder(transcoder_config_file, layer, device=device, dtype=dtype)
+    scan = []
+    for layer, safetensors in enumerate(layers_safetensors):
+        transcoder = load_relu_transcoder_from_safetensors(safetensors, layer, device=device, dtype=dtype)
         transcoders[layer] = transcoder
-        scan = f"{scan}/{layer_scan_format.format(layer)}"
+        scan.append(f"{model_name}/layer.{layer}")
     return TranscoderSettings(transcoders, feature_input_hook, feature_output_hook, scan) 
     
 

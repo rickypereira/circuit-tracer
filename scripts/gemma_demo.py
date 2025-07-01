@@ -34,9 +34,9 @@ import sys
 from collections import namedtuple
 from functools import partial
 from pathlib import Path
-from typing import List, Dict, Tuple, Optional, Any
-
+from typing import Dict
 import torch
+
 DEFAULT_PROJECT_PATH=Path(f"/home/rickpereira").resolve()
 
 # --- Helper Functions ---
@@ -66,10 +66,6 @@ def setup_paths(base_dir: Path) -> Dict[str, Path]:
 paths = setup_paths(DEFAULT_PROJECT_PATH)
 
 from circuit_tracer.replacement_model import ReplacementModel
-from sae_training.config import LanguageModelSAERunnerConfig
-from sae_training.utils import LMSparseAutoencoderSessionloader
-from sae_training.train_sae_on_language_model import train_sae_on_language_model
-
 
 # --- Utility Functions (re-implemented from the notebook's utils) ---
 
@@ -339,109 +335,23 @@ def run_generation_experiment(model, print_gen_func):
     print_gen_func(s_french_season, pre_intervention_generation, post_intervention_generation)
 
 
-# --- Training ---
-def create_training_configs(
-        model_name,  n_layers, checkpoint_path, n_checkpoints=3, d_in=768, d_out=728,
-        expansion_factor=32, lr=0.0004, l1_coefficient=0.00014, b_dec_init_method='mean', 
-        dataset_path="Skylion007/openwebtext", train_batch_size = 4096, 
-        context_size = 128, lr_warm_up_steps=5000, n_batches_in_buffer = 128,
-        total_training_tokens = 1_000_000 * 60, store_batch_size = 32, 
-        use_ghost_grads=True, feature_sampling_method = None, feature_sampling_window = 1000,
-        resample_batches=1028, dead_feature_window=5000, dead_feature_threshold = 1e-8,
-        seed=42) -> Dict[int, LanguageModelSAERunnerConfig]:
-    layer_to_config = {}
-    for layer in range(n_layers):
-        cfg = LanguageModelSAERunnerConfig(
-            hook_point = f"blocks.{layer}.ln2.hook_normalized",
-            hook_point_layer = layer,
-            d_in = d_in,
-            dataset_path = dataset_path,
-            is_dataset_tokenized=False,
-            model_name=model_name,
-            is_transcoder = True,
-            out_hook_point = f"blocks.{layer}.hook_mlp_out",
-            out_hook_point_layer = layer,
-            d_out = d_out,
-            # SAE Parameters
-            expansion_factor = expansion_factor,
-            b_dec_init_method = b_dec_init_method,
-            
-            # Training Parameters
-            lr = lr,
-            l1_coefficient = l1_coefficient,
-            lr_scheduler_name="constantwithwarmup",
-            train_batch_size = train_batch_size,
-            context_size = context_size,
-            lr_warm_up_steps=lr_warm_up_steps,
-            
-            # Activation Store Parameters
-            n_batches_in_buffer = n_batches_in_buffer,
-            total_training_tokens = total_training_tokens,
-            store_batch_size = store_batch_size,
-            
-            # Dead Neurons and Sparsity
-            use_ghost_grads=use_ghost_grads,
-            feature_sampling_method = feature_sampling_method,
-            feature_sampling_window = feature_sampling_window,
-            resample_batches=resample_batches,
-            dead_feature_window=dead_feature_window,
-            dead_feature_threshold = dead_feature_threshold,
-
-            # WANDB
-            log_to_wandb = False,
-            
-            # Misc
-            use_tqdm = True,
-            device = "cuda",
-            seed = seed,
-            n_checkpoints = n_checkpoints,
-            checkpoint_path = checkpoint_path,
-            dtype = torch.float32,
-        )
-        layer_to_config[layer] = cfg
-    return layer_to_config
-
-
-def train(model_name: str) -> List[str]:
-    checkpoint_path = DEFAULT_PROJECT_PATH / "output" / model_name
-    n_layers = get_n_layers(model_name)
-    layer_to_configs = create_training_configs(model_name=model_name, n_layers=n_layers, checkpoint_path=checkpoint_path)
-    paths = []
-    for _, cfg in layer_to_configs.items():
-        loader = LMSparseAutoencoderSessionloader(cfg)
-        model, sparse_autoencoder, activations_loader = loader.load_session()
-        # train SAE
-        sparse_autoencoder = train_sae_on_language_model(
-            model, sparse_autoencoder, activations_loader,
-            n_checkpoints=cfg.n_checkpoints,
-            batch_size = cfg.train_batch_size,
-            feature_sampling_method = cfg.feature_sampling_method,
-            feature_sampling_window = cfg.feature_sampling_window,
-            feature_reinit_scale = cfg.feature_reinit_scale,
-            dead_feature_threshold = cfg.dead_feature_threshold,
-            dead_feature_window=cfg.dead_feature_window,
-            use_wandb = cfg.log_to_wandb,
-            wandb_log_frequency = cfg.wandb_log_frequency
-        )
-
-        # save sae to checkpoints folder
-        path = f"{cfg.checkpoint_path}/final_{sparse_autoencoder.get_name()}.pt"
-        sparse_autoencoder.save_model(path)
-        paths.append(path)
-    return paths
-        
-
 # --- Argument Parsing and Main Execution ---
 
-def get_replacement_model_name(model_name: str) -> Tuple[str, str]:
+def get_transcoder_set(model_name: str) -> str:
+    NotImplemented
+
+def get_repo_name(model_name: str) -> str:
     """Maps string argument to replacement model version"""
     supported_models = {
-        "gemma-2-2b": ("google/gemma-2-2b", "gemma"),
-        "gemma-2-2b-it": ( "google/gemma-2-2b-it", "gemma"),
-        "gemma-2-27b" : ("google/gemma-2-27b", "gemma"),
-        "gemma-2-27b" : ("google/gemma-2-27b-it", "gemma"),
-        "shieldgemma-9b": ("google/shieldgemma-9b", "gemma"),
-        "gpt-2": ("openai-community/gpt2", "gpt"),
+        "gemma-2-2b": "google/gemma-2-2b",
+        "gemma-2-2b-it":  "google/gemma-2-2b-it",
+        "gemma-2-9b" : "google/gemma-2-9b",
+        "gemma-2-9b-it" : "google/gemma-2-9b-it",
+        "gemma-2-27b" : "google/gemma-2-27b",
+        "gemma-2-27b-it" : "google/gemma-2-27b-it",
+        "shieldgemma-2b": "google/shieldgemma-2b",
+        "shieldgemma-9b": "google/shieldgemma-9b",
+        "gpt-2": "openai-community/gpt2",
     }
     if model_name not in supported_models:
         raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
@@ -449,11 +359,54 @@ def get_replacement_model_name(model_name: str) -> Tuple[str, str]:
 
 def get_n_layers(model_name: str) -> int:
     supported_models = {
-        'gemma-2-27b' : 45
+        "gemma-2-2b" : 25,
+        "gemma-2-2b-it" : 25,
+        "gemma-2-9b" : 41,
+        "gemma-2-9b-it" : 41,
+        'gemma-2-27b' : 45,
+        "gemma-2-27b-it": 45,
+        "shieldgemma-2b": 25,
+        "shieldgemma-9b": 41,
+        'gpt2': 11,
     }
     if model_name not in supported_models:
-        raise ValueError(f"Unknown model: {model_name}. Available: {list(model_name.keys())}")
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
     return supported_models[model_name]
+
+def hf_transcoder_set(model_name: str):
+    supported_models = {
+        "gemma-2-2b" : 'gemma'
+    }
+    if model_name not in supported_models:
+        raise ValueError(f"Unknown model: {model_name}. Available: {list(supported_models.keys())}")
+    return supported_models[model_name]
+
+def find_sae_safetensors_files(start_directory):
+    """
+    Collects all file paths that contain "sae.safetensors" within a given directory
+    and its subdirectories.
+
+    Args:
+        start_directory (str): The directory to start the search from.
+
+    Returns:
+        list: A list of full file paths that contain "sae.safetensors".
+              Returns an empty list if no such files are found or if the
+              start_directory does not exist.
+    """
+    found_files = []
+    target_filename = "sae.safetensors"
+
+    if not os.path.isdir(start_directory):
+        print(f"Error: The directory '{start_directory}' does not exist.")
+        return []
+
+    for root, _, files in os.walk(start_directory):
+        for file in files:
+            if file == target_filename:
+                full_path = os.path.join(root, file)
+                found_files.append(full_path)
+    return found_files
 
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
@@ -464,7 +417,9 @@ def parse_arguments() -> argparse.Namespace:
         choices=['gemma-2-2b', "gemma-2-27b"],
         help="Model Name identifier (e.g., gemma-2-2b)."
     )
-    parser.add_argument("--train", action='store_true', help="Run model training")
+    parser.add_argument(
+        "--load_from_huggingface", action="store_true", help="Attempt to load transcoders from huggingface"
+    )
     args = parser.parse_args()
     return args
 
@@ -475,18 +430,17 @@ def main():
 
     args = parse_arguments()
 
-    transcoder_set = None
-    if args.train:
-        print(f"Training model {args.model_name}")
-        transcoder_set = train(model_name=args.model_name)
-    
-    if args.model_name == 'gemma-2-2b':
-        transcoder_set = 'gemma'
+    transcoder_set = None    
+    if args.load_from_huggingface:
+        transcoder_set = hf_transcoder_set(args.model_name)
+    else:
+        start_directory = DEFAULT_PROJECT_PATH / 'output' / args.model_name
+        transcoder_set = find_sae_safetensors_files(start_directory)
 
     print(f"Loading model {args.model_name}")
     # Note: This requires significant memory.
     model = ReplacementModel.from_pretrained(
-        model_name=get_replacement_model_name(model_name=args.model_name),
+        model_name=get_repo_name(model_name=args.model_name),
         transcoder_set=transcoder_set,
         dtype=torch.bfloat16,
     )

@@ -8,7 +8,7 @@ from torch import nn
 from transformer_lens import HookedTransformer, HookedTransformerConfig
 from transformer_lens.hook_points import HookPoint
 
-from circuit_tracer.transcoder import SingleLayerTranscoder, load_transcoder_set, load_local_transcoder_set
+from circuit_tracer.transcoder import SingleLayerTranscoder, load_transcoder_set, load_transcoder_set_from_safetensors
 
 
 class ReplacementMLP(nn.Module):
@@ -148,9 +148,8 @@ class ReplacementModel(HookedTransformer):
                 transcoder_set[0], device=device, dtype=dtype
             )
         else:
-            layer_scan_format = model_name + "layer_{0}"
-            transcoders, feature_input_hook, feature_output_hook, scan = load_local_transcoder_set(
-                transcoder_set, layer_scan_format, device=device, dtype=dtype
+            transcoders, feature_input_hook, feature_output_hook, scan = load_transcoder_set_from_safetensors(
+                model_name, transcoder_set, device, dtype
             )
 
 
