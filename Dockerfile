@@ -10,4 +10,15 @@ RUN pip install "numpy==1.26.4" \
 ARG HF_TOKEN
 ENV HF_TOKEN=$HF_TOKEN
 ENV PYTHONPATH=/app:${PYTHONPATH}
-ENTRYPOINT ["python3", "scripts/train_transcoder.py"]
+ENTRYPOINT ["torchrun", "--nproc_per_node", "8", "-m", "scripts.train_transcoder"]
+CMD ["--model_name", "gemma-2-9b", \
+     "--distribute_modules", \
+     "--batch_size", "1", \
+     "--layers_partition_size", "8", \
+     "--grad_acc_steps", "128", \
+     "--ctx_len", "2048", \
+     "--k", "192", \
+     "--load_in_4bit", \
+     "--micro_acc_steps", "32", \
+     "--log_to_wandb", \
+     "--dataset_train_size", "4000"]
