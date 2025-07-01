@@ -160,7 +160,7 @@ def load_relu_transcoder_from_safetensors(
             d_sae,
             activation_function,
             layer,
-            skip_connection=param_dict["W_skip"] is not None,
+            skip_connection=False,
         )
     transcoder.load_state_dict(param_dict, assign=True)
     return transcoder.to(dtype)
