@@ -197,6 +197,7 @@ def train_worker(rank, world_size, args):
             log_to_wandb=args.log_to_wandb,
             grad_acc_steps=args.grad_acc_steps,
             micro_acc_steps=args.micro_acc_steps,
+            run_name=args.model_name,
             k=args.k,
             layers_partition_size=args.layers_partition_size,
             ctx_len=args.ctx_len,
