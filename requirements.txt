@@ -6,6 +6,7 @@ jedi==0.19.2
 Jinja2==3.1.6
 multiprocess==0.70.16
 safetensors==0.5.3
+eai-sparsify
 tokenizers==0.21.1
 torch>=2.4.0
 torchvision>=0.19.0
