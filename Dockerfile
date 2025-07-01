@@ -11,3 +11,14 @@ ARG HF_TOKEN
 ENV HF_TOKEN=$HF_TOKEN
 ENV PYTHONPATH=/app:${PYTHONPATH}
 ENTRYPOINT ["torchrun", "--nproc_per_node", "gpu", "-m", "scripts.train_transcoder"]
+CMD ["--model_name", "gemma-2-9b", \
+     "--distribute_modules", \
+     "--batch_size", "1", \
+     "--layers_partition_size", "8", \
+     "--grad_acc_steps", "128", \
+     "--ctx_len", "2048", \
+     "--k", "192", \
+     "--load_in_4bit", \
+     "--micro_acc_steps", "32", \
+     "--log_to_wandb", \
+     "--dataset_train_size", "4000"]
