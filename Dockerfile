@@ -10,4 +10,4 @@ RUN pip install "numpy==1.26.4" \
 ARG HF_TOKEN
 ENV HF_TOKEN=$HF_TOKEN
 ENV PYTHONPATH=/app:${PYTHONPATH}
-ENTRYPOINT ["torchrun", "--nproc_per_node", "8", "-m", "scripts.train_transcoder"]
+ENTRYPOINT ["torchrun", "--nproc_per_node", "gpu", "-m", "scripts.train_transcoder"]
